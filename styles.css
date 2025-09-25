@@ -74,154 +74,176 @@ a {
 
 /* Home Theme Colors */
 .home-theme {
-  --primary-surface: #FFFCDC;
-  --secondary-surface: #332F00;
-  --headings-on-primary: #665E00;
-  --body-on-primary: #332F00;
-  --headings-on-secondary: #FFFCDC;
-  --body-on-secondary: #ffffff;
-  --accent: #B4ADFF;
+  --primary-color: #FFF0DC;
+  --secondary-color: #663C00;
+  --tertiary-color: #331E00;
+  --fourth-color: #ffffff;
+
+  /* Semantic Color Variables */
+  --primary-surface: var(--primary-color);
+    --headings-on-primary: var(--secondary-color);
+    --body-on-primary: var(--tertiary-color);
+  --secondary-surface: var(--secondary-color);
+    --headings-on-secondary: var(--primary-color);
+    --body-on-secondary: var(--fourth-color);
+  --accent: var(--tertiary-color);
+  --accent-hover: var(--secondary-color);
 
   /* Dropdown Menu */
-  --dropdown-bg: #ffffff;
-  --dropdown-text: #033808;
-  --dropdown-hover-bg: #033808;
-  --dropdown-hover-text: #d2c8be;
+  --dropdown-bg: var(--fourth-color);
+  --dropdown-text: var(--tertiary-color);
+  --dropdown-hover-bg: var(--tertiary-color);
+  --dropdown-hover-text: var(--fourth-color);
 
   /* Project Details Card */
-  --details-card-bg: #ffffff;
-  --details-card-heading-text: #033808;
-  --details-card-body-text: #033808;
-  --details-card-tag-bg: #d2c8be;
-  --details-card-tag-text: #033808;
+  --details-card-bg: var(--fourth-color);
+  --details-card-heading-text: var(--secondary-color);
+  --details-card-body-text: var(--tertiary-color);
+  --details-card-tag-bg: var(--secondary-color);
+  --details-card-tag-text: var(--fourth-color);
 
   /* Project Card */
-  --card-bg: #ffffff;
-  --card-heading-text: #033808;
-  --card-body-text: #333333;
-
-  /* Card Button */
-  --card-btn-bg: #033808;
-  --card-btn-text: #d2c8be;
-  --card-btn-hover-bg: #d2c8be;
-  --card-btn-hover-text: #033808;
+  --card-bg: var(--primary-color);
+  --card-heading-text: var(--secondary-color);
+  --card-body-text: var(--tertiary-color);
+  --card-btn-bg: var(--tertiary-color);
+  --card-btn-text: var(--fourth-color);
+  --card-btn-hover-bg: var(--secondary-color);
+  --card-btn-hover-text: var(--fourth-color);
 
   /* Card Image Filter */
-  --card-image-color: var(--accent);
+  --card-image-color: var(--fourth-color);
 }
+
 
 /* Project 1 Theme Colors */
 .project1-theme {
-  --primary-surface: #C3ADFF;
-  --secondary-surface: #1C0066;
-  --headings-on-primary: #4C23BC;
-  --body-on-primary: #1C0066;
-  --headings-on-secondary: #C3ADFF;
-  --body-on-secondary: #000000;
-  --accent: #000000;
+  --primary-color: #C3ADFF;
+  --secondary-color: #4C23BC;
+  --tertiary-color: #1C0066;
+  --fourth-color: #ffffff;
+
+  /* Semantic Color Variables */
+  --primary-surface: var(--primary-color);
+    --headings-on-primary: var(--secondary-color);
+    --body-on-primary: var(--tertiary-color);
+  --secondary-surface: var(--secondary-color);
+    --headings-on-secondary: var(--primary-color);
+    --body-on-secondary: var(--fourth-color);
+  --accent: var(--tertiary-color);
+  --accent-hover: var(--secondary-color);
 
   /* Dropdown Menu */
-  --dropdown-bg: #ffffff;
-  --dropdown-text: #1C0066;
-  --dropdown-hover-bg: #1C0066;
-  --dropdown-hover-text: #C3ADFF;
+  --dropdown-bg: var(--fourth-color);
+  --dropdown-text: var(--tertiary-color);
+  --dropdown-hover-bg: var(--tertiary-color);
+  --dropdown-hover-text: var(--fourth-color);
 
   /* Project Details Card */
-  --details-card-bg: #ffffff;
-  --details-card-heading-text: #4C23BC;
-  --details-card-body-text: #1C0066;
-  --details-card-tag-bg: #C3ADFF;
-  --details-card-tag-text: #1C0066;
+  --details-card-bg: var(--fourth-color);
+  --details-card-heading-text: var(--secondary-color);
+  --details-card-body-text: var(--tertiary-color);
+  --details-card-tag-bg: var(--secondary-color);
+  --details-card-tag-text: var(--fourth-color);
 
   /* Project Card */
-  --card-bg: #ffffff;
-  --card-heading-text: #4C23BC;
-  --card-body-text: #1C0066;
-
-  /* Card Button */
-  --card-btn-bg: #4C23BC;
-  --card-btn-text: #C3ADFF;
-  --card-btn-hover-bg: #1C0066;
-  --card-btn-hover-text: #C3ADFF;
+  --card-bg: var(--primary-color);
+  --card-heading-text: var(--secondary-color);
+  --card-body-text: var(--tertiary-color);
+  --card-btn-bg: var(--fourth-color);
+  --card-btn-text: var(--tertiary-color);
+  --card-btn-hover-bg: var(--accent-hover);
+  --card-btn-hover-text: var(--tertiary-color);
 
   /* Card Image Filter */
-  --card-image-color: var(--headings-on-secondary);
+  --card-image-color: var(--fourth-color);
 }
 
 /* Project 2 Theme Colors */
 .project2-theme {
-  --primary-surface: #306600;
-  --secondary-surface: #B8D2FF;
-  --headings-on-primary: #B8D2FF;
-  --body-on-primary: #FFFFFF;
-  --headings-on-secondary: #306600;
-  --body-on-secondary: #000000;
-  --accent: #000000;
+  --primary-color: #FFE0EF;
+  --secondary-color: #660030;
+  --tertiary-color: #330018;
+  --fourth-color: #ffffff;
+
+  /* Semantic Color Variables */
+  --primary-surface: var(--primary-color);
+    --headings-on-primary: var(--secondary-color);
+    --body-on-primary: var(--tertiary-color);
+  --secondary-surface: var(--secondary-color);
+    --headings-on-secondary: var(--primary-color);
+    --body-on-secondary: var(--fourth-color);
+  --accent: var(--tertiary-color);
+  --accent-hover: var(--secondary-color);
 
   /* Dropdown Menu */
-  --dropdown-bg: #ffffff;
-  --dropdown-text: #306600;
-  --dropdown-hover-bg: #306600;
-  --dropdown-hover-text: #B8D2FF;
+  --dropdown-bg: var(--fourth-color);
+  --dropdown-text: var(--tertiary-color);
+  --dropdown-hover-bg: var(--tertiary-color);
+  --dropdown-hover-text: var(--fourth-color);
 
   /* Project Details Card */
-  --details-card-bg: #ffffff;
-  --details-card-heading-text: #306600;
-  --details-card-body-text: #306600;
-  --details-card-tag-bg: #B8D2FF;
-  --details-card-tag-text: #306600;
+  --details-card-bg: var(--fourth-color);
+  --details-card-heading-text: var(--secondary-color);
+  --details-card-body-text: var(--tertiary-color);
+  --details-card-tag-bg: var(--secondary-color);
+  --details-card-tag-text: var(--fourth-color);
 
   /* Project Card */
-  --card-bg: #ffffff;
-  --card-heading-text: #306600;
-  --card-body-text: #333333;
-
-  /* Card Button */
-  --card-btn-bg: #306600;
-  --card-btn-text: #B8D2FF;
-  --card-btn-hover-bg: #B8D2FF;
-  --card-btn-hover-text: #306600;
+  --card-bg: var(--primary-color);
+  --card-heading-text: var(--secondary-color);
+  --card-body-text: var(--tertiary-color);
+  --card-btn-bg: var(--fourth-color);
+  --card-btn-text: var(--tertiary-color);
+  --card-btn-hover-bg: var(--accent-hover);
+  --card-btn-hover-text: var(--tertiary-color);
 
   /* Card Image Filter */
-  --card-image-color: var(--headings-on-secondary);
+  --card-image-color: var(--fourth-color);
 }
+
 
 /* Project 3 Theme Colors */
 .project3-theme {
-  --primary-surface: #73264A;
-  --secondary-surface: #CCFFF5;
-  --headings-on-primary: #CCFFF5;
-  --body-on-primary: #FFFFFF;
-  --headings-on-secondary: #73264A;
-  --body-on-secondary: #000000;
-  --accent: #000000;
+  --primary-color: #D6E2FF;
+  --secondary-color: #002B99;
+  --tertiary-color: #001D66;
+  --fourth-color: #ffffff;
+
+  /* Semantic Color Variables */
+  --primary-surface: var(--primary-color);
+    --headings-on-primary: var(--secondary-color);
+    --body-on-primary: var(--tertiary-color);
+  --secondary-surface: var(--secondary-color);
+    --headings-on-secondary: var(--primary-color);
+    --body-on-secondary: var(--fourth-color);
+  --accent: var(--tertiary-color);
+  --accent-hover: var(--secondary-color);
 
   /* Dropdown Menu */
-  --dropdown-bg: #ffffff;
-  --dropdown-text: #73264A;
-  --dropdown-hover-bg: #73264A;
-  --dropdown-hover-text: #CCFFF5;
+  --dropdown-bg: var(--fourth-color);
+  --dropdown-text: var(--tertiary-color);
+  --dropdown-hover-bg: var(--tertiary-color);
+  --dropdown-hover-text: var(--fourth-color);
 
   /* Project Details Card */
-  --details-card-bg: #ffffff;
-  --details-card-heading-text: #73264A;
-  --details-card-body-text: #73264A;
-  --details-card-tag-bg: #CCFFF5;
-  --details-card-tag-text: #73264A;
+  --details-card-bg: var(--fourth-color);
+  --details-card-heading-text: var(--secondary-color);
+  --details-card-body-text: var(--tertiary-color);
+  --details-card-tag-bg: var(--secondary-color);
+  --details-card-tag-text: var(--fourth-color);
 
   /* Project Card */
-  --card-bg: #ffffff;
-  --card-heading-text: #73264A;
-  --card-body-text: #333333;
-
-  /* Card Button */
-  --card-btn-bg: #73264A;
-  --card-btn-text: #CCFFF5;
-  --card-btn-hover-bg: #CCFFF5;
-  --card-btn-hover-text: #73264A;
+  --card-bg: var(--primary-color);
+  --card-heading-text: var(--secondary-color);
+  --card-body-text: var(--tertiary-color);
+  --card-btn-bg: var(--fourth-color);
+  --card-btn-text: var(--tertiary-color);
+  --card-btn-hover-bg: var(--accent-hover);
+  --card-btn-hover-text: var(--tertiary-color);
 
   /* Card Image Filter */
-  --card-image-color: var(--headings-on-secondary);
+  --card-image-color: var(--fourth-color);
 }
 
 /* Typography */
@@ -279,7 +301,7 @@ p, body {
 }
 
 .nav-logo {
-  font-family: 'Chango', cursive;
+  font-family: 'Coiny', cursive;
   font-size: var(--h4-size);
   font-weight: 400;
   color: var(--headings-on-primary);
@@ -298,10 +320,10 @@ p, body {
 .dropdown-btn {
   background: transparent;
   border: none;
-  color: var(--body-on-primary);
-  font-family: 'Kanit', sans-serif;
-  font-size: var(--button-size);
-  font-weight: 500;
+  color: var(--secondary-color);
+  font-family: 'Coiny', sans-serif;
+  font-size: var(--h4-size);
+  font-weight: 400;
   cursor: pointer;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-sm);
@@ -313,7 +335,7 @@ p, body {
 
 .dropdown-btn:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--headings-on-primary);
+  color: var(--tertiary-color);
 }
 
 .dropdown-btn i {
