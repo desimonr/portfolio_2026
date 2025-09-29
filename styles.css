@@ -74,9 +74,9 @@ a {
 
 /* Home Theme Colors */
 .home-theme {
-  --primary-color: #FFF0DC;
-  --secondary-color: #663C00;
-  --tertiary-color: #331E00;
+  --primary-color: #DBFEFF;
+  --secondary-color: #005457;
+  --tertiary-color: #001E1F;
   --fourth-color: #ffffff;
 
   /* Semantic Color Variables */
@@ -118,9 +118,9 @@ a {
 
 /* Project 1 Theme Colors */
 .project1-theme {
-  --primary-color: #C3ADFF;
-  --secondary-color: #4C23BC;
-  --tertiary-color: #1C0066;
+  --primary-color: #F4F0FF;
+  --secondary-color: #4F0FFF;
+  --tertiary-color: #200075;
   --fourth-color: #ffffff;
 
   /* Semantic Color Variables */
@@ -161,9 +161,9 @@ a {
 
 /* Project 2 Theme Colors */
 .project2-theme {
-  --primary-color: #FFE0EF;
-  --secondary-color: #660030;
-  --tertiary-color: #330018;
+  --primary-color: #FFEFEB;
+  --secondary-color: #8A2000;
+  --tertiary-color: #330C00;
   --fourth-color: #ffffff;
 
   /* Semantic Color Variables */
@@ -205,9 +205,9 @@ a {
 
 /* Project 3 Theme Colors */
 .project3-theme {
-  --primary-color: #D6E2FF;
-  --secondary-color: #002B99;
-  --tertiary-color: #001D66;
+  --primary-color: #F0F4FF;
+  --secondary-color: #003CD6;
+  --tertiary-color: #001752;
   --fourth-color: #ffffff;
 
   /* Semantic Color Variables */
