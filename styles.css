@@ -611,18 +611,15 @@ main {
 .detail-item {
   margin-bottom: var(--spacing-md);
   color: var(--details-card-body-text);
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
+  display: block;
 }
 
-.detail-item span {
-  background: var(--details-card-tag-bg);
-  color: var(--details-card-tag-text);
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: 100px;
-  font-size: 0.9em;
-  display: inline-block;
+.detail-item span:not(.label) {
+  display: list-item;
+  list-style-position: inside;
+  font-size: 1em;
+  margin-left: var(--spacing-sm);
+  line-height: 1.5;
 }
 
 .detail-item span.label {
@@ -630,6 +627,8 @@ main {
   color: var(--details-card-heading-text);
   padding: 0;
   font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  display: block;
 }
 
 /* Desktop Layout for Project Details */
