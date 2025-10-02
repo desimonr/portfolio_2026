@@ -666,6 +666,14 @@ main {
   cursor: zoom-in;
 }
 
+.img-original-size {
+  width: auto; /* Use the image's intrinsic width instead of stretching */
+  max-width: 100%; /* Still prevent overflow on very small screens */
+  display: block; /* Allow margin auto to work for centering */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .content-section p {
   color: var(--body-on-primary);
