@@ -303,7 +303,7 @@ p, body {
   font-family: 'Coiny', cursive;
   font-size: var(--h4-size);
   font-weight: 400;
-  color: var(--fourth-color);
+  color: var(--secondary-color);
   transition: color 0.3s ease;
 }
 
@@ -320,7 +320,7 @@ p, body {
 .dropdown-btn {
   background: transparent;
   border: none;
-  color: var(--fourth-color);
+  color: var(--secondary-color);
   font-family: 'Coiny', sans-serif;
   font-size: var(--h4-size);
   font-weight: 400;
