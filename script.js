@@ -96,85 +96,61 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Run the scroll animation logic for the home page
-  handleHomeScrollAnimation();
+  handleHeroScroll();
   // Initialize the lightbox for project page images
   initializeImageLightbox();
   // --- End of combined logic ---
 });
 
 /**
- * Handles background color transition on scroll for the home page.
+ * Handles the hero scroll animation on the home page.
  */
-function handleHomeScrollAnimation() {
-  const heroSection = document.querySelector('.hero');
-  const projectsSection = document.querySelector('.projects');
-  const navbar = document.querySelector('.navbar');
-  const footer = document.querySelector('.footer');
-  const navLogo = document.querySelector('.nav-logo');
-  const navDropdownBtn = document.querySelector('.dropdown-btn');
+function handleHeroScroll() {
+  const wrapper = document.querySelector('.hero-scroll-wrapper');
+  const heroMainText = document.querySelector('.hero-main-text');
+  const storySection = document.querySelector('.story-section');
 
-  // Only run this on the home page
-  if (!heroSection || !projectsSection || !navbar || !footer || !navLogo || !navDropdownBtn) {
-    return;
+  if (!wrapper || !heroMainText || !storySection) {
+    return; // Only run on the home page
   }
 
-  const styles = getComputedStyle(document.body);
-  const startColor = styles.getPropertyValue('--primary-surface').trim();
-  const endColor = styles.getPropertyValue('--secondary-surface').trim();
-  // Text colors for the navbar
-  const startTextColor = styles.getPropertyValue('--secondary-color').trim();
-  const endTextColor = styles.getPropertyValue('--fourth-color').trim(); // white
-
-  // Helper to convert hex/rgb to an array of [r, g, b]
-  function colorToRgb(color) {
-    if (color.startsWith('#')) {
-      const bigint = parseInt(color.substring(1), 16);
-      return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
-    } else if (color.startsWith('rgb')) {
-      return color.match(/\d+/g).map(Number);
-    }
-    // Add more parsers if other color formats are used
-    return [255, 255, 255]; // Default to white
-  }
-
-  const startRgb = colorToRgb(startColor);
-  const endRgb = colorToRgb(endColor);
-  const startTextRgb = colorToRgb(startTextColor);
-  const endTextRgb = colorToRgb(endTextColor);
+  let ticking = false;
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const heroHeight = heroSection.offsetHeight;
-    const transitionEnd = heroSection.offsetTop + heroHeight;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const wrapperTop = wrapper.offsetTop;
+        const wrapperHeight = wrapper.offsetHeight;
+        const viewportHeight = window.innerHeight;
 
-    let progress = 0;
-    if (scrollY > heroSection.offsetTop && scrollY < transitionEnd) {
-      // Calculate progress from the start of the hero section to its end
-      progress = (scrollY - heroSection.offsetTop) / heroHeight;
-    } else if (scrollY >= transitionEnd) {
-      progress = 1;
+        // Calculate scroll progress within the wrapper (0 to 1)
+        const progress = Math.max(0, Math.min(1, (scrollY - wrapperTop) / (wrapperHeight - viewportHeight)));
+
+        // Fade out hero text in the first half of the scroll
+        const heroFadeEnd = 0.5;
+        const heroOpacity = 1 - Math.min(1, progress / heroFadeEnd);
+        heroMainText.style.opacity = heroOpacity.toFixed(2);
+
+        // Fade in story section in the second half of the scroll
+        const storyFadeStart = 0.5;
+        let storyOpacity = 0;
+        if (progress > storyFadeStart) {
+          storyOpacity = (progress - storyFadeStart) / (1 - storyFadeStart);
+        }
+        storySection.style.opacity = storyOpacity.toFixed(2);
+
+        if (storyOpacity > 0) {
+          storySection.style.pointerEvents = 'auto';
+        } else {
+          storySection.style.pointerEvents = 'none';
+        }
+
+        ticking = false;
+      });
+
+      ticking = true;
     }
-
-    // Clamp progress between 0 and 1
-    progress = Math.max(0, Math.min(1, progress));
-
-    // Interpolate RGB values
-    const bgR = Math.round(startRgb[0] + (endRgb[0] - startRgb[0]) * progress);
-    const bgG = Math.round(startRgb[1] + (endRgb[1] - startRgb[1]) * progress);
-    const bgB = Math.round(startRgb[2] + (endRgb[2] - startRgb[2]) * progress);
-    const currentBgColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
-
-    const textR = Math.round(startTextRgb[0] + (endTextRgb[0] - startTextRgb[0]) * progress);
-    const textG = Math.round(startTextRgb[1] + (endTextRgb[1] - startTextRgb[1]) * progress);
-    const textB = Math.round(startTextRgb[2] + (endTextRgb[2] - startTextRgb[2]) * progress);
-    const currentTextColor = `rgb(${textR}, ${textG}, ${textB})`;
-
-    // Apply the interpolated colors
-    document.body.style.backgroundColor = currentBgColor;
-    navbar.style.backgroundColor = currentBgColor;
-    footer.style.backgroundColor = currentBgColor;
-    navLogo.style.color = currentTextColor;
-    navDropdownBtn.style.color = currentTextColor;
   });
 }
 
