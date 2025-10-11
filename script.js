@@ -110,8 +110,9 @@ function handleHeroScroll() {
   const heroMainText = document.querySelector('.hero-main-text');
   const storySection = document.querySelector('.story-section');
   const storyItems = document.querySelectorAll('.story-item');
+  const floatingShapes = document.querySelector('.floating-shapes');
 
-  if (!wrapper || !heroMainText || !storySection || !storyItems.length) {
+  if (!wrapper || !heroMainText || !storySection || !storyItems.length || !floatingShapes) {
     return; // Only run on the home page
   }
 
@@ -132,6 +133,7 @@ function handleHeroScroll() {
         const heroFadeEnd = 0.2;
         const heroOpacity = 1 - Math.min(1, progress / heroFadeEnd);
         heroMainText.style.opacity = heroOpacity.toFixed(2);
+        floatingShapes.style.opacity = heroOpacity.toFixed(2);
 
         // Fade in story section container between 20% and 40%
         const storySectionFadeStart = 0.2;
