@@ -109,8 +109,9 @@ function handleHeroScroll() {
   const wrapper = document.querySelector('.hero-scroll-wrapper');
   const heroMainText = document.querySelector('.hero-main-text');
   const storySection = document.querySelector('.story-section');
+  const storyItems = document.querySelectorAll('.story-item');
 
-  if (!wrapper || !heroMainText || !storySection) {
+  if (!wrapper || !heroMainText || !storySection || !storyItems.length) {
     return; // Only run on the home page
   }
 
@@ -127,24 +128,43 @@ function handleHeroScroll() {
         // Calculate scroll progress within the wrapper (0 to 1)
         const progress = Math.max(0, Math.min(1, (scrollY - wrapperTop) / (wrapperHeight - viewportHeight)));
 
-        // Fade out hero text in the first half of the scroll
-        const heroFadeEnd = 0.5;
+        // Fade out hero text in the first 20% of the scroll
+        const heroFadeEnd = 0.2;
         const heroOpacity = 1 - Math.min(1, progress / heroFadeEnd);
         heroMainText.style.opacity = heroOpacity.toFixed(2);
 
-        // Fade in story section in the second half of the scroll
-        const storyFadeStart = 0.5;
-        let storyOpacity = 0;
-        if (progress > storyFadeStart) {
-          storyOpacity = (progress - storyFadeStart) / (1 - storyFadeStart);
+        // Fade in story section container between 20% and 40%
+        const storySectionFadeStart = 0.2;
+        const storySectionFadeEnd = 0.4;
+        let storySectionOpacity = 0;
+        if (progress > storySectionFadeStart) {
+            storySectionOpacity = (progress - storySectionFadeStart) / (storySectionFadeEnd - storySectionFadeStart);
         }
-        storySection.style.opacity = storyOpacity.toFixed(2);
+        storySection.style.opacity = Math.min(1, storySectionOpacity.toFixed(2));
 
-        if (storyOpacity > 0) {
+        if (storySectionOpacity > 0) {
           storySection.style.pointerEvents = 'auto';
         } else {
           storySection.style.pointerEvents = 'none';
         }
+
+        // Fade in story items consecutively between 40% and 80%
+        const itemsFadeStart = 0.4;
+        const itemsFadeEnd = 0.8;
+        const storyProgress = (progress - itemsFadeStart) / (itemsFadeEnd - itemsFadeStart);
+        const itemDuration = 1 / storyItems.length;
+
+        storyItems.forEach((item, index) => {
+            const itemStart = index * itemDuration;
+            const itemEnd = itemStart + itemDuration;
+            let itemOpacity = 0;
+
+            if(storyProgress > itemStart) {
+                itemOpacity = (storyProgress - itemStart) / (itemEnd - itemStart);
+            }
+
+            item.style.opacity = Math.min(1, itemOpacity).toFixed(2);
+        });
 
         ticking = false;
       });

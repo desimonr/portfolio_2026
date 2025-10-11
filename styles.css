@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--primary-surface); /* Set a base background */
+  background-color: #0a0a0a;
 }
 
 img {
@@ -74,36 +74,36 @@ a {
 .home-theme {
   --primary-color: #0a0a0a;
   --secondary-color: #ffffff;
-  --tertiary-color: #00323c;
+  --tertiary-color: #ffffff;
   --fourth-color: #ffffff;
 
   /* Semantic Color Variables */
-  --primary-surface : var(--primary-color);
+  --primary-surface: var(--primary-color);
     --headings-on-primary: var(--secondary-color);
-    --body-on-primary: var(--tertiary-color);
+    --body-on-primary: var(--secondary-color);
   --secondary-surface: var(--primary-color);
     --headings-on-secondary: var(--secondary-color);
-    --body-on-secondary: var(--tertiary-color);
-  --accent: var(--tertiary-color);
+    --body-on-secondary: var(--secondary-color);
+  --accent: var(--secondary-color);
   --accent-hover: var(--secondary-color);
 
   /* Dropdown Menu */
-  --dropdown-bg: var(--fourth-color);
-  --dropdown-text: var(--tertiary-color);
-  --dropdown-hover-bg: var(--tertiary-color);
-  --dropdown-hover-text: var(--fourth-color);
+  --dropdown-bg: var(--priamry-color);
+  --dropdown-text: var(--secondary-color);
+  --dropdown-hover-bg: var(--secondary-color);
+  --dropdown-hover-text: var(--primary-color);
 
   /* Project Details Card */
-  --details-card-bg: var(--secondary-color);
-  --details-card-heading-text: var(--tertiary-color);
+  --details-card-bg: var(--fourth-color);
+  --details-card-heading-text: var(--secondary-color);
   --details-card-body-text: var(--tertiary-color);
   --details-card-tag-bg: var(--secondary-color);
   --details-card-tag-text: var(--fourth-color);
 
   /* Project Card */
   --card-bg: var(--secondary-color);
-  --card-heading-text: var(--tertiary-color);
-  --card-body-text: var(--tertiary-color);
+  --card-heading-text: var(--primary-color);
+  --card-body-text: var(--primary-color);
   --card-btn-bg: var(--tertiary-color);
   --card-btn-text: var(--fourth-color);
   --card-btn-hover-bg: var(--secondary-color);
@@ -280,12 +280,13 @@ p, body {
 
 /* Navigation */
 .navbar {
-  background: var(--primary-surface);
+  background: transparent;
   padding: var(--spacing-md) 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 .nav-container {
@@ -302,7 +303,7 @@ p, body {
   font-family: 'Coiny', cursive;
   font-size: var(--h4-size);
   font-weight: 400;
-  color: var(--headings-on-primary);
+  color: var(--fourth-color);
   transition: color 0.3s ease;
 }
 
@@ -319,7 +320,7 @@ p, body {
 .dropdown-btn {
   background: transparent;
   border: none;
-  color: var(--secondary-color);
+  color: var(--fourth-color);
   font-family: 'Coiny', sans-serif;
   font-size: var(--h4-size);
   font-weight: 400;
@@ -931,7 +932,7 @@ a:focus,
 
 /* New Hero Section Styles */
 .hero-scroll-wrapper {
-  height: 200vh; /* Controls scroll duration */
+  height: 300vh; /* Controls scroll duration */
   position: relative;
 }
 
@@ -1014,9 +1015,11 @@ a:focus,
 .story-item {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 4rem;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .story-item.visible {
