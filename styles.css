@@ -280,7 +280,7 @@ p, body {
 
 /* Navigation */
 .navbar {
-  background: transparent;
+  background: var(--primary-surface);
   padding: var(--spacing-md) 0;
   position: fixed;
   top: 0;
