@@ -1200,4 +1200,8 @@ a:focus,
   .hero-new {
     padding: calc(60px + var(--spacing-lg)) var(--spacing-md) var(--spacing-lg);
   }
+
+  .hide-on-mobile {
+    display: none;
+  }
 }
