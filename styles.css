@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #0a0a0a;
+  background-color: var(--primary-surface);
 }
 
 img {
@@ -88,10 +88,10 @@ a {
   --accent-hover: var(--secondary-color);
 
   /* Dropdown Menu */
-  --dropdown-bg: var(--priamry-color);
-  --dropdown-text: var(--secondary-color);
-  --dropdown-hover-bg: var(--secondary-color);
-  --dropdown-hover-text: var(--primary-color);
+  --dropdown-bg: var(--fourth-color);
+  --dropdown-text: var(--primary-color);
+  --dropdown-hover-bg: var(--primary-color);
+  --dropdown-hover-text: var(--fourth-color);
 
   /* Project Details Card */
   --details-card-bg: var(--fourth-color);
