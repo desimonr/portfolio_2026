@@ -1,14 +1,8 @@
 import React from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function VoiceGuidelinesCaseStudy() {
     return (
         <article className="pt-32 pb-20 px-6 md:px-12 max-w-5xl mx-auto">
-            <Link to="/" className="inline-flex items-center gap-2 text-ink/60 hover:text-blurple transition-colors font-medium mb-12 group">
-                <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-                Back to Archive
-            </Link>
 
             <header className="mb-16 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">Conversational AI Voice Guidelines</h1>
@@ -74,7 +68,7 @@ export default function VoiceGuidelinesCaseStudy() {
 
                 {/* Info Sidebar */}
                 <aside className="md:col-span-1">
-                    <div className="sticky top-32 glass-panel p-8 rounded-3xl">
+                    <div className="glass-panel p-8 rounded-3xl">
                         <h3 className="text-lg font-bold text-ink mb-6 pb-4 border-b border-ink/10">Project Details</h3>
 
                         <div className="mb-8">
