@@ -16,6 +16,7 @@ import MyNMApp from './pages/MyNMApp';
 function ScrollToTop() {
   const { pathname } = useLocation();
   React.useEffect(() => {
+    console.log('navigated to', pathname);
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
@@ -33,11 +34,23 @@ function Home() {
 }
 
 function App() {
+  // When exporting to a subdirectory the Vite `BASE_URL` ends with a slash.
+  // React Router will only strip the basename if the pathname starts with it
+  // exactly, so we remove any trailing slash to match both `/foo` and
+  // `/foo/` requests.
+  const rawBase = import.meta.env.BASE_URL || '/';
+  const basename = rawBase.replace(/\/+$/, '');
+
+  // debug info to help diagnose mismatched routes in production
+  if (typeof window !== 'undefined') {
+    console.log('App initializing');
+    console.log('  rawBase', rawBase);
+    console.log('  basename', basename);
+    console.log('  current window.location.pathname', window.location.pathname);
+  }
+
   return (
-    // BrowserRouter needs a basename when the app is served from a subpath.
-    // Vite sets import.meta.env.BASE_URL based on the `base` config, so we
-    // can reuse that value here to keep things in sync.
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router basename={basename}>
       <ScrollToTop />
       <main className="bg-slate min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden">
         <Navbar />

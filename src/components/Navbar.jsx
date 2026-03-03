@@ -6,10 +6,17 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
-    // react-router's pathname doesn't include the basename, so we strip it manually
-    const base = import.meta.env.BASE_URL || '/';
-    const trimmed = location.pathname.replace(base, '') || '/';
-    const isHome = trimmed === '/';
+    // derive a base path without trailing slash so we can match `/${base}`
+    // whether or not the URL ends with a slash.
+    const rawBase = import.meta.env.BASE_URL || '/';
+    const base = rawBase.replace(/\/+$/, '');
+    // remove the base from the current pathname for comparison
+    let path = location.pathname;
+    if (base && path.startsWith(base)) {
+        path = path.slice(base.length);
+    }
+    if (path === '') path = '/';
+    const isHome = path === '/';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,7 +45,7 @@ export default function Navbar() {
 
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => {
-                        const href = `${base}${isHome ? '' : ''}${link.href}`; // base already contains trailing slash
+                        const href = `${base}${link.href}`; // base has no trailing slash
                         return (
                             <a
                                 key={link.name}
@@ -77,7 +84,7 @@ export default function Navbar() {
                 <div className="md:hidden pt-6 pb-4 border-t border-ink/10 mt-4 animate-in slide-in-from-top-4 fade-in duration-200">
                     <div className="flex flex-col gap-4">
                         {navLinks.map((link) => {
-                            const href = `${base}${isHome ? '' : ''}${link.href}`;
+                            const href = `${base}${link.href}`;
                             return (
                                 <a
                                     key={link.name}
