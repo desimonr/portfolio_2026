@@ -34,7 +34,10 @@ function Home() {
 
 function App() {
   return (
-    <Router>
+    // BrowserRouter needs a basename when the app is served from a subpath.
+    // Vite sets import.meta.env.BASE_URL based on the `base` config, so we
+    // can reuse that value here to keep things in sync.
+    <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <main className="bg-slate min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden">
         <Navbar />

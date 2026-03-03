@@ -6,7 +6,10 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
-    const isHome = location.pathname === '/';
+    // react-router's pathname doesn't include the basename, so we strip it manually
+    const base = import.meta.env.BASE_URL || '/';
+    const trimmed = location.pathname.replace(base, '') || '/';
+    const isHome = trimmed === '/';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -34,15 +37,18 @@ export default function Navbar() {
                 </Link>
 
                 <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={isHome ? link.href : `/${link.href}`}
-                            className="text-sm font-medium text-ink/70 hover:text-ink transition-colors link-underline"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                    {navLinks.map((link) => {
+                        const href = `${base}${isHome ? '' : ''}${link.href}`; // base already contains trailing slash
+                        return (
+                            <a
+                                key={link.name}
+                                href={href}
+                                className="text-sm font-medium text-ink/70 hover:text-ink transition-colors link-underline"
+                            >
+                                {link.name}
+                            </a>
+                        );
+                    })}
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -70,16 +76,19 @@ export default function Navbar() {
             {mobileMenuOpen && (
                 <div className="md:hidden pt-6 pb-4 border-t border-ink/10 mt-4 animate-in slide-in-from-top-4 fade-in duration-200">
                     <div className="flex flex-col gap-4">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={isHome ? link.href : `/${link.href}`}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="text-lg font-medium text-ink/80 hover:text-blurple transition-colors px-2"
-                            >
-                                {link.name}
-                            </a>
-                        ))}
+                        {navLinks.map((link) => {
+                            const href = `${base}${isHome ? '' : ''}${link.href}`;
+                            return (
+                                <a
+                                    key={link.name}
+                                    href={href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="text-lg font-medium text-ink/80 hover:text-blurple transition-colors px-2"
+                                >
+                                    {link.name}
+                                </a>
+                            );
+                        })}
                         <a
                             href="https://linkedin.com/in/raymonddesimone"
                             target="_blank"
