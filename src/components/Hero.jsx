@@ -63,7 +63,7 @@ export default function Hero() {
                 <div className="max-w-4xl">
                     <div className="overflow-hidden mb-2">
                         <p className="hero-text-line text-lg md:text-xl font-medium text-ink/70">
-                            Hi, I'm Raymond DeSImone.
+                            Hi, I'm Raymond DeSimone.
                         </p>
                     </div>
 
@@ -87,7 +87,7 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <a href="https://linkedin.com/in/raymonddesimone" target="_blank" rel="noopener noreferrer" className="hero-button magnetic flex items-center justify-center gap-2 bg-ink text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
+                        <a href="https://linkedin.com/in/rdes" target="_blank" rel="noopener noreferrer" className="hero-button magnetic flex items-center justify-center gap-2 bg-ink text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
                             <span>Primary Link</span>
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </a>

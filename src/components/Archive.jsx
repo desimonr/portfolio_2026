@@ -1,12 +1,15 @@
 import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ArrowUpRight, Activity, Terminal, Layers } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCardRect } from '../contexts/OverlayContext';
 
 const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
     const cardRef = useRef(null);
     const contentRef = useRef(null);
     const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+    const navigate = useNavigate();
+    const cardRectRef = useCardRect();
 
     const handleMouseMove = (e) => {
         if (!cardRef.current) return;
@@ -64,6 +67,12 @@ const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
             ref={cardRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            onClick={(e) => {
+                // Store the card's viewport rect so the overlay can animate from it
+                if (cardRef.current && cardRectRef) {
+                    cardRectRef.current = cardRef.current.getBoundingClientRect();
+                }
+            }}
             className={`block group relative h-[400px] rounded-3xl p-1 bg-gradient-to-br from-white to-slate overflow-hidden cursor-pointer shadow-fintech border border-white/60 transform-style-3d`}
         >
             {/* Dynamic Glare Effect */}
