@@ -29,43 +29,21 @@ export default function Footer() {
 
                 <div className="mb-12">
                     <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter leading-none text-white mb-6 transform scale-y-110">
-                        LET'S BUILD
+                        LET'S DESIGN
                         <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blurple to-[#4A43D4]">SOMETHING.</span>
                     </h2>
                 </div>
 
-                <div className="w-full max-w-2xl bg-[#0F2D4A] rounded-2xl p-6 border border-white/10 shadow-2xl mb-12">
-                    <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
-                        <div className="flex gap-2">
-                            <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-                            <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                            <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
-                        </div>
-                        <div className="flex items-center gap-2 text-white/50 font-mono text-xs ml-4">
-                            <TerminalIcon size={14} />
-                            <span>bash - root@rd-portfolio ~</span>
-                        </div>
-                    </div>
-
-                    <div className="font-mono text-left space-y-4 text-sm md:text-base">
-                        <div className="flex text-white/70">
-                            <span className="text-blurple mr-2">$</span>
-                            <span className="typing-cmd">sudo initiate_contact --target linkedin</span>
-                        </div>
-                        <div className="text-white animate-pulse">
-                        </div>
-                        <div className="pt-4">
-                            <a
-                                href="https://linkedin.com/in/raymonddesimone"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-block bg-white text-ink font-sans font-bold py-3 px-8 rounded-sm hover:bg-slate hover:scale-[1.02] transition-all magnetic"
-                            >
-                                Connect on LinkedIn
-                            </a>
-                        </div>
-                    </div>
+                <div className="pt-4 mb-12">
+                    <a
+                        href="https://linkedin.com/in/raymonddesimone"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-white text-ink font-sans font-bold py-3 px-8 rounded-sm hover:bg-slate hover:scale-[1.02] transition-all magnetic"
+                    >
+                        Connect on LinkedIn
+                    </a>
                 </div>
 
                 {/* Status Bar */}

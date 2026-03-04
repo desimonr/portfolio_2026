@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Archive from './components/Archive';
 import Stack from './components/Stack';
-import Experience from './components/Experience';
 import Footer from './components/Footer';
 import CaseStudyOverlay from './components/CaseStudyOverlay';
 import { OverlayProvider } from './contexts/OverlayContext';
@@ -15,7 +14,6 @@ function Home() {
       <Hero />
       <Archive />
       <Stack />
-      <Experience />
     </>
   );
 }

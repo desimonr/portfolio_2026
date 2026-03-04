@@ -136,14 +136,14 @@ export default function CaseStudyOverlay({ slug }) {
             {/* Backdrop */}
             <div
                 ref={backdropRef}
-                className="fixed inset-0 z-40 bg-black/60 backdrop-blur-md"
+                className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-md"
                 onClick={close}
                 aria-hidden="true"
             />
 
             {/* Panel container */}
             <div
-                className="fixed inset-x-0 top-8 bottom-8 z-50 flex items-stretch justify-center"
+                className="fixed inset-x-0 top-8 bottom-8 z-[70] flex items-stretch justify-center"
                 role="dialog"
                 aria-modal="true"
                 aria-label="Case study"

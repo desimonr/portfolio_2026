@@ -5,7 +5,7 @@ import { ArrowRight, Code2 } from 'lucide-react';
 export default function Hero() {
     const containerRef = useRef(null);
     const [text, setText] = useState('');
-    const fullText = '> Initializing systems... Loading NLP models... Connection establishing...';
+    const fullText = '> Conducting usability audits... Mapping conversational architectures... Refining interaction patterns...';
 
     useEffect(() => {
         // Typing effect logic
@@ -55,7 +55,7 @@ export default function Hero() {
         <section ref={containerRef} className="relative min-h-[90dvh] pt-32 pb-20 overflow-hidden flex flex-col justify-center">
             {/* Background Angled Shape (Fintech Fluid Preset) */}
             <div className="absolute inset-0 z-0 bg-slate overflow-hidden">
-                <div className="bg-shape absolute top-[-10%] right-[-5%] w-[60%] h-[120%] bg-gradient-to-bl from-[#E2E8F0] to-[#F6F9FC] transform rotate-12 -skew-x-12 origin-top-right border-l border-white/40 shadow-xl opacity-0" />
+                <div className="bg-shape absolute top-[-10%] right-[-5%] w-[60%] h-[120%] bg-gradient-to-bl from-[#E2E8F0] to-[#F6F9FC] transform rotate-12 -skew-x-12 origin-top-right opacity-0" />
                 <div className="bg-shape absolute bottom-[-20%] left-[-10%] w-[50%] h-[50%] bg-white/50 backdrop-blur-3xl transform -rotate-6 rounded-full blur-3xl opacity-0" />
             </div>
 
@@ -67,7 +67,7 @@ export default function Hero() {
                         </p>
                     </div>
 
-                    <div className="overflow-hidden mb-6">
+                    <div className="overflow-hidden mb-6 pb-2">
                         <h1 className="hero-text-line text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.1] text-balance">
                             Senior UX Designer
                         </h1>
@@ -87,14 +87,9 @@ export default function Hero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <a href="https://linkedin.com/in/rdes" target="_blank" rel="noopener noreferrer" className="hero-button magnetic flex items-center justify-center gap-2 bg-ink text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
-                            <span>Primary Link</span>
+                        <a href="#work" className="hero-button magnetic flex items-center justify-center gap-2 bg-ink text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
+                            <span>Explore Featured Work</span>
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                        </a>
-
-                        <a href="#work" className="hero-button magnetic flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-full text-base font-semibold shadow-md hover:shadow-lg border border-slate hover:-translate-y-1 transition-all group">
-                            <Code2 size={18} className="text-blurple" />
-                            <span>Review Work</span>
                         </a>
                     </div>
                 </div>

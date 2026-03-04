@@ -116,7 +116,7 @@ export default function Archive() {
     return (
         <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
             <div className="mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink mb-4">The Archive.</h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink mb-4">Featured Work.</h2>
                 <p className="text-lg text-ink/60 font-medium max-w-xl">
                     Signature projects and core skill pillars engineered for scale and precision.
                 </p>

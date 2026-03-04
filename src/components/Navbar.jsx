@@ -28,7 +28,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Work', href: '#work' },
-        { name: 'Stack', href: '#stack' },
+        { name: 'Skills', href: '#skills' },
         { name: 'Connect', href: '#connect' }
     ];
 
