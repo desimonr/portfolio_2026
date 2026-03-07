@@ -112,38 +112,34 @@ const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
     );
 };
 
-export default function Archive() {
+export default function Archive({ content }) {
+    // Map of icons to project slugs for easy editing
+    const iconMap = {
+        'invisible-ai': Layers,
+        'voice-guidelines': Terminal,
+        'mynm-app': Activity
+    };
+
     return (
         <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
             <div className="mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink mb-4">Featured Work.</h2>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink mb-4">{content.title}</h2>
                 <p className="text-lg text-ink/60 font-medium max-w-xl">
-                    Signature projects and core skill pillars engineered for scale and precision.
+                    {content.description}
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-[2000px]">
-                <ArchiveCard
-                    index={1}
-                    title="Invisible AI"
-                    desc="The Showcase Hologram. Next-generation computer vision interfaces for industrial performance."
-                    icon={Layers}
-                    to="/project/invisible-ai"
-                />
-                <ArchiveCard
-                    index={2}
-                    title="Voice Guidelines"
-                    desc="The Telemetry Typewriter. Standardizing conversational NLP frameworks across product suites."
-                    icon={Terminal}
-                    to="/project/voice-guidelines"
-                />
-                <ArchiveCard
-                    index={3}
-                    title="MyNM App"
-                    desc="The Protocol View. Streamlining healthcare access through intuitive patient-centered design."
-                    icon={Activity}
-                    to="/project/mynm-app"
-                />
+                {content.projects.map((project, idx) => (
+                    <ArchiveCard
+                        key={project.slug}
+                        index={idx + 1}
+                        title={project.title}
+                        desc={project.desc}
+                        icon={iconMap[project.slug] || Layers}
+                        to={`/project/${project.slug}`}
+                    />
+                ))}
             </div>
         </section>
     );

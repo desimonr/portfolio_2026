@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ArrowRight, Code2 } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ content }) {
     const containerRef = useRef(null);
     const [text, setText] = useState('');
-    const fullText = '> Conducting usability audits... Mapping conversational architectures... Refining interaction patterns...';
+    const fullText = content.telemetryText;
 
     useEffect(() => {
         // Typing effect logic
@@ -49,7 +49,7 @@ export default function Hero() {
             clearInterval(typingInterval);
             ctx.revert();
         };
-    }, []);
+    }, [fullText]);
 
     return (
         <section ref={containerRef} className="relative min-h-[90dvh] pt-32 pb-20 overflow-hidden flex flex-col justify-center">
@@ -63,18 +63,18 @@ export default function Hero() {
                 <div className="max-w-4xl">
                     <div className="overflow-hidden mb-2">
                         <p className="hero-text-line text-lg md:text-xl font-medium text-ink/70">
-                            Hi, I'm Raymond DeSimone.
+                            {content.greeting}
                         </p>
                     </div>
 
                     <div className="overflow-hidden mb-6 pb-2">
                         <h1 className="hero-text-line text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.1] text-balance">
-                            Senior UX Designer
+                            {content.title}
                         </h1>
                     </div>
                     <div className="overflow-hidden mb-8">
                         <h2 className="hero-text-line text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance bg-clip-text text-transparent bg-gradient-to-r from-blurple to-[#4A43D4] pr-1 pb-2">
-                            Conversational AI & NLP Interfaces
+                            {content.subtitle}
                         </h2>
                     </div>
 
@@ -88,7 +88,7 @@ export default function Hero() {
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                         <a href="#work" className="hero-button magnetic flex items-center justify-center gap-2 bg-ink text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
-                            <span>Explore Featured Work</span>
+                            <span>{content.cta}</span>
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                     </div>

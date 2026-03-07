@@ -1,19 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, useLocation, useNavigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Archive from './components/Archive';
-import Stack from './components/Stack';
-import Footer from './components/Footer';
-import CaseStudyOverlay from './components/CaseStudyOverlay';
+import Navbar from './sections/Navbar';
+import Hero from './sections/Hero';
+import Archive from './sections/Archive';
+import Stack from './sections/Stack';
+import Footer from './sections/Footer';
+import CaseStudyOverlay from './sections/CaseStudyOverlay';
 import { OverlayProvider } from './contexts/OverlayContext';
+import { CONTENT } from './content';
 
 function Home() {
   return (
     <>
-      <Hero />
-      <Archive />
-      <Stack />
+      <Hero content={CONTENT.hero} />
+      <Archive content={CONTENT.work} />
+      <Stack content={CONTENT.skills} />
     </>
   );
 }
@@ -34,14 +35,14 @@ function App() {
     <Router basename={basename}>
       <OverlayProvider>
         <main className="bg-slate min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden">
-          <Navbar />
+          <Navbar content={CONTENT.navbar} />
           {/*
-                     * <Home> is ALWAYS mounted — never remounts when the overlay opens/closes.
-                     * This means scroll position is naturally preserved; no scroll-to-top needed.
-                     */}
+           * <Home> is ALWAYS mounted — never remounts when the overlay opens/closes.
+           * This means scroll position is naturally preserved; no scroll-to-top needed.
+           */}
           <Home />
           <CaseStudyOverlayManager />
-          <Footer />
+          <Footer content={CONTENT.footer} />
         </main>
       </OverlayProvider>
     </Router>

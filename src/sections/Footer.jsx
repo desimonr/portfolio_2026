@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Terminal as TerminalIcon } from 'lucide-react';
 
-export default function Footer() {
+export default function Footer({ content }) {
     const [time, setTime] = useState('');
 
     useEffect(() => {
@@ -29,20 +29,20 @@ export default function Footer() {
 
                 <div className="mb-12">
                     <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter leading-none text-white mb-6 transform scale-y-110">
-                        LET'S DESIGN
+                        {content.headline}
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blurple to-[#4A43D4]">SOMETHING.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blurple to-[#4A43D4]">{content.subHeadline}</span>
                     </h2>
                 </div>
 
                 <div className="pt-4 mb-12">
                     <a
-                        href="https://linkedin.com/in/raymonddesimone"
+                        href={content.links[0].href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-white text-ink font-sans font-bold py-3 px-8 rounded-sm hover:bg-slate hover:scale-[1.02] transition-all magnetic"
                     >
-                        Connect on LinkedIn
+                        {content.ctaLabel}
                     </a>
                 </div>
 
@@ -54,7 +54,7 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <span>&copy; {new Date().getFullYear()} RD. All Rights Reserved.</span>
+                        <span>&copy; {new Date().getFullYear()} {content.copyright}</span>
                     </div>
 
                     <div className="flex gap-6">

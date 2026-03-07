@@ -2,9 +2,9 @@ import React, { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
-import InvisibleAICaseStudy from '../pages/InvisibleAICaseStudy';
-import VoiceGuidelinesCaseStudy from '../pages/VoiceGuidelinesCaseStudy';
-import MyNMApp from '../pages/MyNMApp';
+import InvisibleAICaseStudy from '../projects/InvisibleAICaseStudy';
+import VoiceGuidelinesCaseStudy from '../projects/VoiceGuidelinesCaseStudy';
+import MyNMApp from '../projects/MyNMApp';
 import { useCardRect } from '../contexts/OverlayContext';
 
 const CASE_STUDIES = [
