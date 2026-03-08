@@ -21,9 +21,9 @@ export const CONTENT = {
 
     // ──────── HERO SECTION ────────
     hero: {
-        greeting: "Hi, I'm Raymond DeSimone.",
+        greeting: "Hi, I'm Raymond DeSimone,",
         title: "Senior UX Designer",
-        subtitle: "Conversational AI & NLP Interfaces",
+        subtitle: "specializing in AI interfaces, healthcare, and manufacturing.",
         // Typing effect text
         telemetryText: "> Conducting usability audits... Mapping conversational architectures... Refining interaction patterns...",
         cta: "Explore Featured Work"
