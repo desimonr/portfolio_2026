@@ -39,21 +39,21 @@ export const CONTENT = {
                 id: 1,
                 slug: "invisible-ai",
                 title: "Invisible AI",
-                desc: "The Showcase Hologram. Next-generation computer vision interfaces for industrial performance.",
+                desc: "Redesigning a computer vision review interface to make high-volume AI video data manageable and actionable.",
                 tags: ["AI", "UX"]
             },
             {
                 id: 2,
                 slug: "voice-guidelines",
                 title: "Voice Guidelines",
-                desc: "The Telemetry Typewriter. Standardizing conversational NLP frameworks across product suites.",
+                desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses across product suites.",
                 tags: ["NLP", "SaaS"]
             },
             {
                 id: 3,
                 slug: "mynm-app",
                 title: "MyNM App",
-                desc: "The Protocol View. Streamlining healthcare access through intuitive patient-centered design.",
+                desc: "Modernizing a major healthcare mobile app through research-driven IA and industry-standard navigation patterns.",
                 tags: ["IoT", "Voice"]
             }
         ]
