@@ -5,17 +5,17 @@ import gsap from 'gsap';
 import InvisibleAICaseStudy from '../projects/InvisibleAICaseStudy';
 import VoiceGuidelinesCaseStudy from '../projects/VoiceGuidelinesCaseStudy';
 import MyNMApp from '../projects/MyNMApp';
-import { useCardRect } from '../contexts/OverlayContext';
+import { useOverlayContext } from '../contexts/OverlayContext';
 
 const CASE_STUDIES = [
     { slug: 'invisible-ai', label: 'Invisible AI', Component: InvisibleAICaseStudy, bg: 'bg-indigo-50' },
-    { slug: 'voice-guidelines', label: 'Voice Guidelines', Component: VoiceGuidelinesCaseStudy, bg: 'bg-teal-50' },
-    { slug: 'mynm-app', label: 'MyNM App', Component: MyNMApp, bg: 'bg-rose-50' },
+    { slug: 'voice-guidelines', label: 'Voice Guidelines', Component: VoiceGuidelinesCaseStudy, bg: 'bg-indigo-50' },
+    { slug: 'mynm-app', label: 'MyNM App', Component: MyNMApp, bg: 'bg-indigo-50' },
 ];
 
 export default function CaseStudyOverlay({ slug }) {
     const navigate = useNavigate();
-    const cardRectRef = useCardRect();
+    const { cardRectRef, triggerRef } = useOverlayContext();
     const panelRef = useRef(null);   // outer glass panel — GSAP target
     const scrollRef = useRef(null);   // inner scroll container
     const backdropRef = useRef(null);
@@ -25,7 +25,54 @@ export default function CaseStudyOverlay({ slug }) {
     const currentIndex = CASE_STUDIES.findIndex((cs) => cs.slug === slug);
     const { Component, bg } = CASE_STUDIES[currentIndex] ?? {};
 
-    const close = useCallback(() => navigate('/'), [navigate]);
+    const close = useCallback(() => {
+        const panelEl = panelRef.current;
+        const backdropEl = backdropRef.current;
+        if (!panelEl) return navigate('/');
+
+        const tl = gsap.timeline({
+            onComplete: () => navigate('/')
+        });
+
+        // Fade backdrop out
+        if (backdropEl) {
+            tl.to(backdropEl, { opacity: 0, duration: 0.3, ease: 'power2.in' }, 0);
+        }
+
+        const triggerEl = triggerRef?.current;
+        if (triggerEl) {
+            // Get current rect of the trigger element
+            const cr = triggerEl.getBoundingClientRect();
+            const pr = panelEl.getBoundingClientRect();
+
+            // Calculate insets to match the card's position
+            const t = Math.max(0, cr.top - pr.top);
+            const r = Math.max(0, pr.right - cr.right);
+            const b = Math.max(0, pr.bottom - cr.bottom);
+            const l = Math.max(0, cr.left - pr.left);
+
+            tl.to(panelEl, {
+                clipPath: `inset(${t}px ${r}px ${b}px ${l}px round 1.5rem)`,
+                duration: 0.45,
+                ease: 'expo.inOut'
+            }, 0);
+
+            // Subtle fade out for the last half of the shrink to prevent "stuck" frames
+            tl.to(panelEl, {
+                autoAlpha: 0,
+                duration: 0.2,
+                ease: 'power2.in'
+            }, 0.25);
+        } else {
+            // Fallback for deep links or missing trigger
+            tl.to(panelEl, {
+                autoAlpha: 0,
+                y: 24,
+                duration: 0.3,
+                ease: 'power3.in'
+            }, 0);
+        }
+    }, [navigate, triggerRef]);
 
     const goNext = useCallback(() => {
         const nextIndex = (currentIndex + 1) % CASE_STUDIES.length;
@@ -61,12 +108,9 @@ export default function CaseStudyOverlay({ slug }) {
             panelEl.style.clipPath = `inset(${t}px ${r}px ${b}px ${l}px round 1.5rem)`;
 
             gsap.to(panelEl, {
-                clipPath: 'inset(0px 0px 0px 0px round 1rem)',
+                clipPath: 'inset(0px 0px 0px 0px round 1.5rem)', // Matches the card's round-3xl (1.5rem)
                 duration: 0.55,
-                ease: 'expo.out',
-                onComplete: () => {
-                    panelEl.style.clipPath = 'none'; // hand off to CSS border-radius
-                },
+                ease: 'expo.out'
             });
 
             // Clear so switching between studies doesn't reuse stale rect
@@ -94,6 +138,11 @@ export default function CaseStudyOverlay({ slug }) {
             document.body.style.width = '';
             document.body.style.overflowY = '';
             window.scrollTo(0, scrollY); // restore exact position
+
+            // Restore focus to the element that triggered the overlay
+            if (triggerRef?.current) {
+                triggerRef.current.focus();
+            }
         };
     }, []);
 
@@ -152,9 +201,9 @@ export default function CaseStudyOverlay({ slug }) {
                 <button
                     onClick={goPrev}
                     aria-label="Previous case study"
-                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group"
+                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group focus-visible:outline-none"
                 >
-                    <span className="w-10 h-10 rounded-full border border-white/20 group-hover:border-white/50 group-hover:bg-white/10 flex items-center justify-center transition-all">
+                    <span className="w-10 h-10 rounded-full border border-white/20 group-hover:border-white/50 group-hover:bg-white/10 flex items-center justify-center transition-all group-focus-visible:ring-2 group-focus-visible:ring-white">
                         <ChevronLeft size={20} />
                     </span>
                 </button>
@@ -175,7 +224,7 @@ export default function CaseStudyOverlay({ slug }) {
                         <button
                             onClick={close}
                             aria-label="Close"
-                            className="sticky top-4 float-right mr-4 z-10 w-10 h-10 rounded-full bg-white/30 backdrop-blur-md border border-white/40 flex items-center justify-center text-ink/60 hover:text-ink hover:bg-white/50 transition-all shadow-lg"
+                            className="sticky top-4 float-right mr-4 z-10 w-10 h-10 rounded-full bg-white/30 backdrop-blur-md border border-white/40 flex items-center justify-center text-ink/60 hover:text-ink hover:bg-white/50 transition-all shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple"
                         >
                             <X size={18} />
                         </button>
@@ -209,9 +258,9 @@ export default function CaseStudyOverlay({ slug }) {
                 <button
                     onClick={goNext}
                     aria-label="Next case study"
-                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group"
+                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group focus-visible:outline-none"
                 >
-                    <span className="w-10 h-10 rounded-full border border-white/20 group-hover:border-white/50 group-hover:bg-white/10 flex items-center justify-center transition-all">
+                    <span className="w-10 h-10 rounded-full border border-white/20 group-hover:border-white/50 group-hover:bg-white/10 flex items-center justify-center transition-all group-focus-visible:ring-2 group-focus-visible:ring-white">
                         <ChevronRight size={20} />
                     </span>
                 </button>

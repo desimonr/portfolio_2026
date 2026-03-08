@@ -35,7 +35,7 @@ export default function Navbar({ content }) {
     return (
         <nav className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out ${scrolled || mobileMenuOpen ? 'w-[90%] max-w-5xl glass-panel py-3 px-6 rounded-3xl md:rounded-full' : 'w-full max-w-7xl py-6 px-12 bg-transparent'}`}>
             <div className="flex items-center justify-between">
-                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="text-xl font-bold tracking-tighter text-ink magnetic block">
+                <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="Raymond DeSimone Home" className="text-xl font-bold tracking-tighter text-ink magnetic block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple rounded-lg">
                     {content.logo}
                 </Link>
 
@@ -46,7 +46,7 @@ export default function Navbar({ content }) {
                             <a
                                 key={link.name}
                                 href={href}
-                                className="text-sm font-medium text-ink/70 hover:text-ink transition-colors link-underline"
+                                className="text-sm font-medium text-ink/70 hover:text-ink transition-colors link-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple rounded-md"
                             >
                                 {link.name}
                             </a>
@@ -59,7 +59,8 @@ export default function Navbar({ content }) {
                         href={content.cta.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hidden md:flex magnetic items-center gap-2 bg-blurple text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-[0_0_20px_rgba(99,91,255,0.4)] hover:shadow-[0_0_30px_rgba(99,91,255,0.6)] transition-all"
+                        aria-label="Connect on LinkedIn"
+                        className="hidden md:flex magnetic items-center gap-2 bg-blurple text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-[0_0_20px_rgba(99,91,255,0.4)] hover:shadow-[0_0_30px_rgba(99,91,255,0.6)] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blurple"
                     >
                         <Linkedin size={16} />
                         <span>{content.cta.label}</span>

@@ -12,7 +12,7 @@ export default function InvisibleAICaseStudy() {
             </header>
 
             {/* Hero Image / Header */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-3xl bg-slate border border-white/40 shadow-xl overflow-hidden mb-16 relative">
+            <div className="w-full h-[400px] md:h-[500px] rounded-3xl bg-slate border border-white/40 shadow-sm overflow-hidden mb-16 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10" />
                 {/* We will load the actual image when available, using placeholder for now */}
                 <div className="absolute inset-0 flex items-center justify-center text-ink/40 font-mono text-sm">
@@ -69,7 +69,7 @@ export default function InvisibleAICaseStudy() {
 
                 {/* Info Sidebar */}
                 <aside className="md:col-span-1">
-                    <div className="glass-panel p-8 rounded-3xl">
+                    <div className="glass-card p-8 rounded-3xl">
                         <h3 className="text-lg font-bold text-ink mb-6 pb-4 border-b border-ink/10">Project Details</h3>
 
                         <div className="mb-8">

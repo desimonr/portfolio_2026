@@ -40,7 +40,7 @@ export default function Footer({ content }) {
                         href={content.links[0].href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-white text-ink font-sans font-bold py-3 px-8 rounded-sm hover:bg-slate hover:scale-[1.02] transition-all magnetic"
+                        className="inline-block bg-white text-ink font-sans font-bold py-3 px-8 rounded-full hover:bg-slate hover:scale-[1.02] transition-all magnetic"
                     >
                         {content.ctaLabel}
                     </a>

@@ -12,7 +12,7 @@ export default function VoiceGuidelinesCaseStudy() {
             </header>
 
             {/* Hero Image / Header */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-3xl bg-slate border border-white/40 shadow-xl overflow-hidden mb-16 relative">
+            <div className="w-full h-[400px] md:h-[500px] rounded-3xl bg-slate border border-white/40 shadow-sm overflow-hidden mb-16 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10" />
                 <div className="absolute inset-0 flex items-center justify-center">
                     {/* Temporarily pointing to parent folder image path, assuming public access or we move assets later */}
@@ -68,7 +68,7 @@ export default function VoiceGuidelinesCaseStudy() {
 
                 {/* Info Sidebar */}
                 <aside className="md:col-span-1">
-                    <div className="glass-panel p-8 rounded-3xl">
+                    <div className="glass-card p-8 rounded-3xl">
                         <h3 className="text-lg font-bold text-ink mb-6 pb-4 border-b border-ink/10">Project Details</h3>
 
                         <div className="mb-8">

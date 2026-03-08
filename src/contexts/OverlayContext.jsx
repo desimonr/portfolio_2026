@@ -8,14 +8,15 @@ const OverlayContext = createContext(null);
 
 export function OverlayProvider({ children }) {
     const cardRectRef = useRef(null);
+    const triggerRef = useRef(null);
     return (
-        <OverlayContext.Provider value={cardRectRef}>
+        <OverlayContext.Provider value={{ cardRectRef, triggerRef }}>
             {children}
         </OverlayContext.Provider>
     );
 }
 
-/** Returns the cardRectRef — write .current before navigating, read it in the overlay */
-export function useCardRect() {
+/** Returns { cardRectRef, triggerRef } — write to them before navigating */
+export function useOverlayContext() {
     return useContext(OverlayContext);
 }
