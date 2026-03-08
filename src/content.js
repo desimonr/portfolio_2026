@@ -11,8 +11,7 @@ export const CONTENT = {
         logo: "RD.",
         links: [
             { name: "Work", href: "#work" },
-            { name: "Skills", href: "#skills" },
-            { name: "Connect", href: "#connect" }
+            { name: "Skills", href: "#skills" }
         ],
         cta: {
             label: "Connect",
