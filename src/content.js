@@ -40,6 +40,7 @@ export const CONTENT = {
                 slug: "invisible-ai",
                 title: "Invisible AI",
                 desc: "Redesigning a computer vision review interface to make high-volume AI video data manageable and actionable.",
+                thumb: "img/invisible_ai/thumb.png",
                 tags: ["AI", "UX"]
             },
             {
@@ -47,6 +48,7 @@ export const CONTENT = {
                 slug: "voice-guidelines",
                 title: "Voice Guidelines",
                 desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses across product suites.",
+                thumb: "img/voice_guidelines/thumb.png",
                 tags: ["NLP", "SaaS"]
             },
             {
@@ -54,6 +56,7 @@ export const CONTENT = {
                 slug: "mynm-app",
                 title: "MyNM App",
                 desc: "Modernizing a major healthcare mobile app through research-driven IA and industry-standard navigation patterns.",
+                thumb: "img/mynm_redesign/new_design/thumb.png",
                 tags: ["IoT", "Voice"]
             }
         ]

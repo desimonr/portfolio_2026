@@ -4,9 +4,10 @@ import { ArrowUpRight, Activity, Terminal, Layers } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useOverlayContext } from '../contexts/OverlayContext';
 
-const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
+const ArchiveCard = ({ title, desc, thumb, icon: Icon, index, to }) => {
     const cardRef = useRef(null);
     const contentRef = useRef(null);
+    const imageRef = useRef(null);
     const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
     const navigate = useNavigate();
     const { cardRectRef, triggerRef } = useOverlayContext();
@@ -42,6 +43,15 @@ const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
             ease: 'power2.out',
             transformPerspective: 1000
         });
+
+        // Subtle image scale
+        if (imageRef.current) {
+            gsap.to(imageRef.current, {
+                scale: 1.1,
+                duration: 0.5,
+                ease: 'power2.out'
+            });
+        }
     };
 
     const handleMouseLeave = () => {
@@ -59,6 +69,13 @@ const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
             ease: 'power2.out',
             clearProps: 'all'
         });
+        if (imageRef.current) {
+            gsap.to(imageRef.current, {
+                scale: 1,
+                duration: 0.8,
+                ease: 'power2.out'
+            });
+        }
     };
 
     return (
@@ -68,17 +85,16 @@ const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={(e) => {
-                // Store the card's viewport rect so the overlay can animate from it
                 if (cardRef.current && cardRectRef) {
                     cardRectRef.current = cardRef.current.getBoundingClientRect();
                     triggerRef.current = e.currentTarget;
                 }
             }}
-            className={`block group relative h-[400px] rounded-3xl p-1 bg-gradient-to-br from-white to-slate overflow-hidden cursor-pointer shadow-fintech border border-white/60 transform-style-3d focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple`}
+            className={`block group relative h-[480px] rounded-3xl p-1 bg-gradient-to-br from-white to-slate overflow-hidden cursor-pointer shadow-fintech border border-white/60 transform-style-3d focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple`}
         >
             {/* Dynamic Glare Effect */}
             <div
-                className="absolute inset-0 z-0 transition-opacity duration-300 pointer-events-none"
+                className="absolute inset-0 z-20 transition-opacity duration-300 pointer-events-none"
                 style={{
                     opacity: glare.opacity,
                     background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 60%)`,
@@ -86,28 +102,41 @@ const ArchiveCard = ({ title, desc, icon: Icon, index, to }) => {
             />
 
             {/* Inner Card Content */}
-            <div className="relative z-10 w-full h-full bg-slate/50 backdrop-blur-md rounded-[22px] p-8 flex flex-col justify-between border border-white/20">
-                <div ref={contentRef} className="flex flex-col justify-between h-full transform-style-3d">
-                    <div className="flex justify-between items-start">
-                        <div className="w-12 h-12 rounded-xl bg-blurple/10 text-blurple flex items-center justify-center backdrop-blur-sm border border-blurple/20">
-                            <Icon size={24} />
-                        </div>
-                        <div className="w-10 h-10 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 text-ink">
-                            <ArrowUpRight size={20} />
-                        </div>
-                    </div>
+            <div className="relative z-10 w-full h-full bg-slate-50 rounded-[22px] flex flex-col overflow-hidden border border-white/20">
+                {/* Image Section */}
+                <div className="relative h-1/2 overflow-hidden bg-slate border-b border-white/20">
+                    {thumb && (
+                        <img
+                            ref={imageRef}
+                            src={`${import.meta.env.BASE_URL}${thumb}`}
+                            alt={title}
+                            className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
+                        />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate/40 to-transparent" />
 
-                    <div>
-                        <div className="font-mono text-xs text-blurple font-medium mb-3 tracking-wider uppercase">Project 0{index}</div>
-                        <h3 className="text-2xl font-bold tracking-tight text-ink mb-2">{title}</h3>
-                        <p className="text-ink/60 font-medium">{desc}</p>
+                    {/* Icon Floating Badge */}
+                    <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white/90 text-blurple flex items-center justify-center backdrop-blur-md border border-white shadow-lg z-10">
+                        <Icon size={20} />
                     </div>
                 </div>
 
-                {/* specific card backgrounds based on index implicitly via CSS absolute elements logic from requirement */}
-                {index === 1 && (
-                    <div className="absolute top-1/4 -right-1/4 w-64 h-64 bg-blurple/5 rounded-full blur-3xl -z-10 group-hover:bg-blurple/10 transition-colors duration-500" />
-                )}
+                {/* Text Content */}
+                <div ref={contentRef} className="p-8 flex flex-col justify-between flex-grow transform-style-3d">
+                    <div>
+                        <div className="flex justify-between items-start mb-4">
+                            <div className="font-mono text-[10px] text-blurple font-bold tracking-[0.2em] uppercase">Project 0{index}</div>
+                            <div className="w-8 h-8 rounded-full bg-blurple/5 text-blurple flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                                <ArrowUpRight size={16} />
+                            </div>
+                        </div>
+                        <h3 className="text-xl font-bold tracking-tight text-ink mb-2 leading-tight">{title}</h3>
+                        <p className="text-sm text-ink/60 font-medium leading-relaxed">{desc}</p>
+                    </div>
+
+                    {/* Gradient highlight on hover */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blurple/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
             </div>
         </Link>
     );
@@ -137,6 +166,7 @@ export default function Archive({ content }) {
                         index={idx + 1}
                         title={project.title}
                         desc={project.desc}
+                        thumb={project.thumb}
                         icon={iconMap[project.slug] || Layers}
                         to={`/project/${project.slug}`}
                     />

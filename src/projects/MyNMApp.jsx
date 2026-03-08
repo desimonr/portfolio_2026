@@ -16,12 +16,10 @@ export default function MyNMApp() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10" />
                 <div className="absolute inset-0 flex items-center justify-center bg-zinc-100">
                     <img
-                        src="/img/mynm_redesign/new_design/mockup_no_bg.png"
+                        src={`${import.meta.env.BASE_URL}img/mynm_redesign/new_design/mockup_no_bg.png`}
                         alt="MyNM App Redesign Header"
-                        className="w-auto h-full object-contain mix-blend-multiply opacity-50 block md:hidden"
-                        onError={(e) => { e.target.style.display = 'none' }}
+                        className="w-auto h-full object-contain"
                     />
-                    <span className="text-ink/40 font-mono text-sm z-20">[ header image placeholder ]</span>
                 </div>
             </div>
 

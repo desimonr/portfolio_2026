@@ -19,7 +19,7 @@ function Home() {
   );
 }
 
-/** Renders the overlay whenever the URL is /project/:slug — lives inside the Router */
+/** Renders the overlay whenever the URL is /project/:slug – lives inside the Router */
 function CaseStudyOverlayManager() {
   const { pathname } = useLocation();
   const slug = pathname.match(/^\/project\/([^/]+)/)?.[1] ?? null;
@@ -37,7 +37,7 @@ function App() {
         <main className="bg-slate min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden">
           <Navbar content={CONTENT.navbar} />
           {/*
-           * <Home> is ALWAYS mounted — never remounts when the overlay opens/closes.
+           * <Home> is ALWAYS mounted – never remounts when the overlay opens/closes.
            * This means scroll position is naturally preserved; no scroll-to-top needed.
            */}
           <Home />

@@ -14,10 +14,11 @@ export default function InvisibleAICaseStudy() {
             {/* Hero Image / Header */}
             <div className="w-full h-[400px] md:h-[500px] rounded-3xl bg-slate border border-white/40 shadow-sm overflow-hidden mb-16 relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10" />
-                {/* We will load the actual image when available, using placeholder for now */}
-                <div className="absolute inset-0 flex items-center justify-center text-ink/40 font-mono text-sm">
-                    [ header.png — loads on live site ]
-                </div>
+                <img
+                    src={`${import.meta.env.BASE_URL}img/invisible_ai/header.png`}
+                    alt="Invisible AI Video Review Interface"
+                    className="w-full h-full object-cover"
+                />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
@@ -26,7 +27,7 @@ export default function InvisibleAICaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">About the Project</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Invisible AI builds computer vision software that tracks worker safety and operational progress across factory camera networks. As a UX Consultant, I was brought in to redesign the video review interface—the core application where site managers and engineers search for, watch, and act on AI-organized footage.
+                            Invisible AI builds computer vision software that tracks worker safety and operational progress across factory camera networks. As a UX Consultant, I was brought in to redesign the video review interface–the core application where site managers and engineers search for, watch, and act on AI-organized footage.
                         </p>
                     </section>
 
@@ -42,15 +43,15 @@ export default function InvisibleAICaseStudy() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Research revealed that while site managers valued the AI's thoroughness, they needed a way to scope results; 99% of searches were for specific body numbers on individual lines. I also found that users were manually jumping between adjacent cameras because the results didn't help them understand spatial relationships. The AI's thoroughness had become a UX liability that needed filtering and context to solve.
                         </p>
-                        <div className="w-full h-64 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ research.png — loads on live site ]</div>
+                        <div className="w-full h-64 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ research.png – loads on live site ]</div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Key Design Decisions</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            The redesign introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. I also updated the video player layout to surface spatial context—showing each clip’s relationship to adjacent cameras—and added clear affordances for users to verify and correct the AI's occasional misidentifications.
+                            The redesign introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. I also updated the video player layout to surface spatial context–showing each clip’s relationship to adjacent cameras–and added clear affordances for users to verify and correct the AI's occasional misidentifications.
                         </p>
-                        <div className="w-full h-96 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ new_ui.png — loads on live site ]</div>
+                        <div className="w-full h-96 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ new_ui.png – loads on live site ]</div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">

@@ -16,7 +16,7 @@ export function OverlayProvider({ children }) {
     );
 }
 
-/** Returns { cardRectRef, triggerRef } — write to them before navigating */
+/** Returns { cardRectRef, triggerRef } – write to them before navigating */
 export function useOverlayContext() {
     return useContext(OverlayContext);
 }

@@ -16,7 +16,7 @@ const CASE_STUDIES = [
 export default function CaseStudyOverlay({ slug }) {
     const navigate = useNavigate();
     const { cardRectRef, triggerRef } = useOverlayContext();
-    const panelRef = useRef(null);   // outer glass panel — GSAP target
+    const panelRef = useRef(null);   // outer glass panel – GSAP target
     const scrollRef = useRef(null);   // inner scroll container
     const backdropRef = useRef(null);
     const touchStartX = useRef(null);
@@ -122,12 +122,12 @@ export default function CaseStudyOverlay({ slug }) {
                 { autoAlpha: 1, y: 0, duration: 0.4, ease: 'power3.out' }
             );
         }
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps — intentionally mount-only
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps – intentionally mount-only
 
     // ─── Scroll lock: preserve page scroll position ───────────────────────────
     useEffect(() => {
         const scrollY = window.scrollY;
-        // position:fixed trick — keeps layout stable and remembers scroll offset
+        // position:fixed trick – keeps layout stable and remembers scroll offset
         document.body.style.top = `-${scrollY}px`;
         document.body.style.position = 'fixed';
         document.body.style.width = '100%';
@@ -197,7 +197,7 @@ export default function CaseStudyOverlay({ slug }) {
                 aria-modal="true"
                 aria-label="Case study"
             >
-                {/* Left arrow — desktop only */}
+                {/* Left arrow – desktop only */}
                 <button
                     onClick={goPrev}
                     aria-label="Previous case study"
@@ -220,7 +220,7 @@ export default function CaseStudyOverlay({ slug }) {
                         onTouchStart={handleTouchStart}
                         onTouchEnd={handleTouchEnd}
                     >
-                        {/* Close button — sticky inside scroll area */}
+                        {/* Close button – sticky inside scroll area */}
                         <button
                             onClick={close}
                             aria-label="Close"
@@ -254,7 +254,7 @@ export default function CaseStudyOverlay({ slug }) {
                     </div>
                 </div>
 
-                {/* Right arrow — desktop only */}
+                {/* Right arrow – desktop only */}
                 <button
                     onClick={goNext}
                     aria-label="Next case study"
