@@ -1,10 +1,12 @@
 import React from 'react';
+import Hero3D from '../components/Hero3D';
+import { CONTENT } from '../content';
 
 export default function InvisibleAICaseStudy() {
     return (
-        <article className="pt-32 pb-20 px-6 md:px-12 max-w-5xl mx-auto">
+        <article className="pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 max-w-5xl mx-auto">
 
-            <header className="mb-16 text-center">
+            <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">Invisible AI: Video Review Interface</h1>
                 <p className="text-xl text-ink/70 font-medium max-w-3xl mx-auto text-balance">
                     Next-generation computer vision interfaces for industrial performance.
@@ -12,16 +14,20 @@ export default function InvisibleAICaseStudy() {
             </header>
 
             {/* Hero Image / Header */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-3xl bg-slate border border-white/40 shadow-sm overflow-hidden mb-16 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10" />
-                <img
-                    src={`${import.meta.env.BASE_URL}img/invisible_ai/header.png`}
-                    alt="Invisible AI Video Review Interface"
-                    className="w-full h-full object-cover"
-                />
+            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10 pointer-events-none" />
+                <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center overflow-hidden">
+                    <Hero3D
+                        modelUrl={`${import.meta.env.BASE_URL}${CONTENT.work.projects.find(p => p.slug === 'invisible-ai').modelUrl}`}
+                        baseRotation={[0, -Math.PI / 2, 0]}
+                        scale={0.015}
+                        position={[0, -1.2, 0]}
+                        mousePivotIntensity={[0.15, 0.02]} // Limit vertical tilt to prevent side monitors from clipping floor
+                    />
+                </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 px-6 md:px-0 pb-20 md:pb-0">
                 <div className="md:col-span-2 space-y-12">
 
                     <section className="prose prose-lg prose-slate max-w-none">

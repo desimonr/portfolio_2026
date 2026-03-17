@@ -5,12 +5,14 @@ import gsap from 'gsap';
 import InvisibleAICaseStudy from '../projects/InvisibleAICaseStudy';
 import VoiceGuidelinesCaseStudy from '../projects/VoiceGuidelinesCaseStudy';
 import MyNMApp from '../projects/MyNMApp';
+import PortfolioAIStudy from '../projects/PortfolioAIStudy';
 import { useOverlayContext } from '../contexts/OverlayContext';
 
 const CASE_STUDIES = [
     { slug: 'invisible-ai', label: 'Invisible AI', Component: InvisibleAICaseStudy, bg: 'bg-indigo-50' },
     { slug: 'voice-guidelines', label: 'Voice Guidelines', Component: VoiceGuidelinesCaseStudy, bg: 'bg-indigo-50' },
     { slug: 'mynm-app', label: 'MyNM App', Component: MyNMApp, bg: 'bg-indigo-50' },
+    { slug: 'ai-portfolio', label: 'AI Portfolio', Component: PortfolioAIStudy, bg: 'bg-indigo-50' },
 ];
 
 export default function CaseStudyOverlay({ slug }) {
@@ -192,7 +194,7 @@ export default function CaseStudyOverlay({ slug }) {
 
             {/* Panel container */}
             <div
-                className="fixed inset-x-0 top-8 bottom-8 z-[70] flex items-stretch justify-center"
+                className="fixed inset-x-0 top-0 bottom-0 md:top-8 md:bottom-8 z-[70] flex items-stretch justify-center"
                 role="dialog"
                 aria-modal="true"
                 aria-label="Case study"
@@ -211,7 +213,7 @@ export default function CaseStudyOverlay({ slug }) {
                 {/* Glass panel */}
                 <div
                     ref={panelRef}
-                    className={`relative flex-1 max-w-6xl ${bg ?? 'bg-slate'} rounded-2xl border border-white/50 shadow-[0_24px_64px_rgba(0,0,0,0.35)] ring-1 ring-white/20 overflow-hidden`}
+                    className={`relative flex-1 max-w-6xl w-full ${bg ?? 'bg-slate'} rounded-none md:rounded-2xl border-0 md:border md:border-white/50 md:shadow-[0_24px_64px_rgba(0,0,0,0.35)] md:ring-1 md:ring-white/20 overflow-hidden`}
                 >
                     {/* Scrollable inner area */}
                     <div

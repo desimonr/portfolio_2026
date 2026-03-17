@@ -57,6 +57,13 @@
   .animate-overlay-in {
     animation: overlayIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+
+  /* Hide Spline Logo Watermark */
+  #spline-logo,
+  a[href*="splinetool"],
+  a[href*="spline.design"] {
+    display: none !important;
+  }
 }
 
 @keyframes overlayIn {

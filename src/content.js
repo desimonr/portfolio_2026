@@ -40,6 +40,7 @@ export const CONTENT = {
                 title: "Invisible AI",
                 desc: "Redesigning a computer vision review interface to make high-volume AI video data manageable and actionable.",
                 thumb: "img/invisible_ai/thumb.png",
+                modelUrl: "img/invisible_ai/3D iMacs Mockup.glb",
                 tags: ["AI", "UX"]
             },
             {
@@ -48,6 +49,7 @@ export const CONTENT = {
                 title: "Voice Guidelines",
                 desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses across product suites.",
                 thumb: "img/voice_guidelines/thumb.png",
+                modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
                 tags: ["NLP", "SaaS"]
             },
             {
@@ -56,7 +58,17 @@ export const CONTENT = {
                 title: "MyNM App",
                 desc: "Modernizing a major healthcare mobile app through research-driven IA and industry-standard navigation patterns.",
                 thumb: "img/mynm_redesign/new_design/thumb.png",
+                modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
                 tags: ["IoT", "Voice"]
+            },
+            {
+                id: 4,
+                slug: "ai-portfolio",
+                title: "AI Portfolio",
+                desc: "A meta case study on how this premium, scalable React architecture was built efficiently in tandem with AI assistance.",
+                thumb: "img/ai_portfolio/thumb.png",
+                modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
+                tags: ["React", "AI"]
             }
         ]
     },

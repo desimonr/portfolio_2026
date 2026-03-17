@@ -13,12 +13,15 @@
   },
   "homepage": "https://desimonr.github.io/portfolio_2026/",
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "gsap": "^3.14.2",
     "lucide-react": "^0.576.0",
     "pdf-parse": "^2.4.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^6.30.3"
+    "react-router-dom": "^6.30.3",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -33,6 +36,6 @@
     "globals": "^16.5.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^3.4.17",
-    "vite": "^7.3.1"
+    "vite": "^6.0.0"
   }
 }
