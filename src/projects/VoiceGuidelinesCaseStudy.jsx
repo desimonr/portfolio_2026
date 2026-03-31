@@ -44,19 +44,39 @@ export default function VoiceGuidelinesCaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Stakeholder Survey</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            The chatbot's implementation touched teams across the health system – brand, clinical, and operational. I designed a structured survey to draw on their collective expertise in patient interactions and customer service, using the NNG dimensions as the survey framework so responses would be directly applicable to both the guidelines and the model configuration.
+                            The chatbot's implementation touched teams across the health system – brand, clinical, and operational. I designed a structured survey to draw on their collective expertise in patient interactions and customer service, using the Nielsen Norman Group (NNG) tone of voice dimensions as the survey framework. This ensured responses would be directly applicable to both the written guidelines and the model configuration.
                         </p>
-                        <div className="w-full h-64 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ survey_results.png ]</div>
+
+                        <div className="w-full bg-slate rounded-xl border border-white/40 overflow-hidden mb-8">
+                            <img src="img/voice_guidelines/nng-dimensions.png" alt="NNG Voice Dimensions" className="w-full h-auto object-cover" />
+                        </div>
+
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Across all four dimensions, a majority of stakeholders agreed to shift one point toward the warmer, friendlier end of the scale.
+                            We mapped the existing dimensions for different NM entities to identify where the new conversational AI should sit. Across all four dimensions, a majority of stakeholders agreed to shift one point toward the warmer, friendlier end of the scale for the chatbot, distinct from the broader corporate brand.
                         </p>
+
+                        <div className="grid grid-cols-1 gap-10 mb-12">
+                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center p-6">
+                                <img src="img/voice_guidelines/survey-humor-enthusiasm.png" alt="Humor and Enthusiasm Survey Results" className="w-full h-auto object-contain bg-white/50 rounded-xl p-4 shadow-sm" />
+                            </div>
+                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center p-6">
+                                <img src="img/voice_guidelines/survey-respect-formalness.png" alt="Respect and Formalness Survey Results" className="w-full h-auto object-contain bg-white/50 rounded-xl p-4 shadow-sm" />
+                            </div>
+                        </div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Outcome</h2>
-                        <p className="text-ink/80 leading-relaxed mb-6">
+                        <p className="text-ink/80 leading-relaxed mb-8">
                             The chatbot launched initially under pressure from a surge in COVID-19 inquiries, with responses copied directly from existing NM.org content. Over time, content writers systematically rewrote responses to align with the voice guidelines – and the impact was measurable. The system achieved a <strong className="text-blurple">95% intent recognition rate</strong>, meaning the NLP model successfully understood and routed 95 out of every 100 patient questions. By April 2021, the chatbot was handling over <strong className="text-blurple">3,800 conversations per month</strong>.
                         </p>
+
+                        <div className="w-full flex justify-center mt-6 mb-12">
+                            <div className="w-full max-w-[320px] bg-white rounded-[2.5rem] border-[6px] border-slate/50 overflow-hidden shadow-2xl relative">
+                                <div className="absolute top-0 inset-x-0 h-6 bg-slate/50 z-10 flex justify-center items-end pb-1 rounded-b-xl max-w-[120px] mx-auto"></div>
+                                <img src="img/voice_guidelines/chatbot.gif" alt="Chatbot Interaction Demo" className="w-full h-auto object-cover relative z-0" />
+                            </div>
+                        </div>
                     </section>
 
                 </div>
