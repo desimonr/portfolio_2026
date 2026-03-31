@@ -32,34 +32,34 @@ export const CONTENT = {
     // ──────── FEATURED WORK (ARCHIVE) ────────
     work: {
         title: "Featured Work.",
-        description: "Signature projects and core skill pillars engineered for scale and precision.",
+        description: "",
         projects: [
             {
                 id: 1,
                 slug: "invisible-ai",
                 title: "Invisible AI",
                 desc: "Redesigning a computer vision review interface to make high-volume AI video data manageable and actionable.",
-                thumb: "img/invisible_ai/thumb.png",
+                thumb: "img/invisible_ai_thumb.png",
                 modelUrl: "img/invisible_ai/3D iMacs Mockup.glb",
-                tags: ["AI", "UX"]
+                tags: ["AI", "UX Strategy"]
             },
             {
                 id: 2,
                 slug: "voice-guidelines",
                 title: "Voice Guidelines",
                 desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses across product suites.",
-                thumb: "img/voice_guidelines/thumb.png",
+                thumb: "img/voice_guidelines_thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
-                tags: ["NLP", "SaaS"]
+                tags: ["AI", "Design System"]
             },
             {
                 id: 3,
                 slug: "mynm-app",
                 title: "MyNM App",
                 desc: "Modernizing a major healthcare mobile app through research-driven IA and industry-standard navigation patterns.",
-                thumb: "img/mynm_redesign/new_design/thumb.png",
+                thumb: "img/mynm_app_thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
-                tags: ["IoT", "Voice"]
+                tags: ["Information Architecture", "UX Strategy", "Design System"]
             },
             {
                 id: 4,
@@ -68,7 +68,7 @@ export const CONTENT = {
                 desc: "A meta case study on how this premium, scalable React architecture was built efficiently in tandem with AI assistance.",
                 thumb: "img/ai_portfolio/thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
-                tags: ["React", "AI"]
+                tags: ["AI", "Design System"]
             }
         ]
     },

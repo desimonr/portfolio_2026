@@ -6,9 +6,9 @@ export default function PortfolioAIStudy() {
     return (
         <article className="pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 max-w-5xl mx-auto">
             <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">AI Portfolio Design</h1>
+                <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">AI Portfolio Architecture</h1>
                 <p className="text-xl text-ink/70 font-medium max-w-3xl mx-auto text-balance">
-                    Architecting a premium digital presence through human-AI collaboration.
+                    Structuring a high-fidelity WebGL React application through LLM-assisted development pipelines.
                 </p>
             </header>
 
@@ -22,8 +22,8 @@ export default function PortfolioAIStudy() {
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="glass-panel p-6 rounded-2xl border border-white/20 backdrop-blur-xl max-w-sm text-center">
-                        <p className="text-ink font-mono text-sm uppercase tracking-widest mb-2">Technical Meta Study</p>
-                        <h2 className="text-2xl font-bold text-ink tracking-tight">How it was built with Antigravity</h2>
+                        <p className="text-ink font-mono text-sm uppercase tracking-widest mb-2">Technical Case Study</p>
+                        <h2 className="text-2xl font-bold text-ink tracking-tight">System Architecture & AI Operations</h2>
                     </div>
                 </div>
             </div>
@@ -34,52 +34,49 @@ export default function PortfolioAIStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">About the Project</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            This portfolio is more than a showcase of work—it's a living experiment in human-AI collaborative design. Utilizing Google's Antigravity, Gemini, and Claude, I transformed a vision for a cinematic, high-end digital presence into a fully realized, performant, and accessible React application.
+                            This portfolio application serves as a practical exploration of AI-assisted engineering applied to high-fidelity interface design. The objective was to architect a highly performant, accessible React application capable of rendering advanced 3D environments while maintaining production-grade code quality and modularity.
                         </p>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">The Design Challenge</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            The primary goal was to move beyond the "minimalist portfolio" cliche and create something that felt **cinematic and premium**. This required:
+                            The core constraint was balancing complex, GSAP-powered interactions and robust WebGL components with strict performance benchmarks and accessibility standards. This required a scalable architecture where components could be rapidly iterated upon without introducing technical debt:
                         </p>
                         <ul className="list-disc list-inside space-y-3 text-ink/80 mb-6">
-                            <li>Implementing complex GSAP-powered 3D animations without sacrificing performance.</li>
-                            <li>Ensuring rigorous accessibility (WCAG 2.1) compliance for all interactive elements.</li>
-                            <li>Creating a modular, content-first architecture that allows for rapid updates via a single configuration file.</li>
+                            <li>Implementing Three.js WebGL scenes via `@react-three/fiber` optimized for framerate and load times.</li>
+                            <li>Enforcing keyboard-navigable focus states and ARIA-compliant modal structures (WCAG 2.1).</li>
+                            <li>Establishing a single-source-of-truth configuration model for rapid content deployment without direct UI manipulation.</li>
                         </ul>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
-                        <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">AI-Driven Development</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Architectural Strategy</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            By leveraging Antigravity's agentic capabilities, we achieved development speeds that would traditionally take weeks. The AI wasn't just writing code; it was acting as a design partner, suggesting refinements to button shapes, shadow weights, and animation curves.
+                            Development velocity was accelerated through the strategic orchestration of AI agents. Rather than manual drafting, the workflow focused on prompt engineering, architectural planning, and code review. This approach allowed for rapid iteration on granular details like bezier animation curves, tokenized shadow weights, and interactive 3D materials.
                         </p>
-                        {/* Progressive Disclosure / Screenshots Section */}
-                        <div className="grid grid-cols-1 gap-6 mb-8">
+
+                        <div className="grid grid-cols-1 gap-6 mb-8 mt-8">
                             <div className="bg-slate rounded-2xl border border-white/40 overflow-hidden">
-                                <img src="/brain/f71bfa76-6bb3-43dc-8a36-21a65cf5c4e6/focused_project_card_final_1772927145491.png" alt="Accessibility Focus States" className="w-full h-auto" />
+                                <img src={`${import.meta.env.BASE_URL}img/voice_guidelines_thumb.png`} alt="Voice Guidelines 3D Orb" className="w-full h-auto object-cover" />
                                 <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
-                                    <p className="text-xs font-mono text-ink/60 uppercase">Figure 01: Rigorous focus-state engineering for inclusive navigation.</p>
+                                    <p className="text-xs font-mono text-ink/60 uppercase">Figure 01: Integrating custom distortion shaders and dynamic directional lighting models for the Voice Guidelines hero.</p>
                                 </div>
                             </div>
                         </div>
-                        <p className="text-ink/80 leading-relaxed mb-6">
-                            We prioritized **Accessibility (a11y)** from day one. Using automated audits and manual verification, we implemented focus restoration, ARIA-compliant overlays, and logical keyboard heading structures.
-                        </p>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
-                        <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Visual Identity & Assets</h2>
+                        <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Implementation Details</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Every visual asset on this site, from the macro-focused thumbnails to the high-fidelity case study heros, was orchestrated through AI. By refining prompts for industrial-tech and premium healthcare aesthetics, we created a cohesive visual language that honors the technical nature of my UX work.
+                            A central requirement was ensuring all interactive elements met strict usability criteria. Focus management algorithms were implemented to explicitly guide keyboard users through the interface, ensuring focus restoration upon closing complex components like the case study overlays. Performance budgets structured how the layout handled component reflows when transitioning between 2D and 3D contexts.
                         </p>
-                        <div className="grid grid-cols-2 gap-4 mb-8">
-                            <div className="rounded-xl overflow-hidden border border-white/20 relative aspect-video">
-                                <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/header.png`} alt="Voice Guidelines Hero" className="w-full h-full object-cover" />
-                            </div>
-                            <div className="rounded-xl overflow-hidden border border-white/20 relative aspect-video">
-                                <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/new_design/mockup_no_bg.png`} alt="MyNM App Hero" className="w-full h-full object-cover scale-150 transform translate-y-4" />
+                        <div className="grid grid-cols-1 gap-6 mb-8 mt-8">
+                            <div className="rounded-xl overflow-hidden border border-white/40 relative">
+                                <img src={`${import.meta.env.BASE_URL}img/invisible_ai_thumb.png`} alt="Invisible AI Hero" className="w-full h-auto object-cover" />
+                                <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                    <p className="text-xs font-mono text-ink/60 uppercase">Figure 02: Responsive 3D viewport tracking user cursor position, rendered via WebGL within the Invisible AI hero section.</p>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -87,7 +84,7 @@ export default function PortfolioAIStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Outcome</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            The final result is a portfolio that perfectly balances high-end aesthetics with technical precision. It serves as a testament to the future of design: a frictionless collaboration where AI amplifies the creative intent of the human designer.
+                            The resulting application functions as a highly scalable design system framework. It successfully validates the efficacy of AI-augmented development pipelines for delivering complex, polished user experiences and robust frontend architectures within compressed operational timelines.
                         </p>
                     </section>
                 </div>

@@ -143,12 +143,21 @@ const ArchiveCard = ({ title, desc, thumb, icon: Icon, index, to }) => {
 };
 
 export default function Archive({ content }) {
+    const [activeFilter, setActiveFilter] = useState("All");
+
+    // Curated list of filters relevant for a senior UX role based on project tags
+    const filters = ["All", "AI", "Design System", "Information Architecture", "UX Strategy"];
     // Map of icons to project slugs for easy editing
     const iconMap = {
         'invisible-ai': Layers,
         'voice-guidelines': Terminal,
         'mynm-app': Activity
     };
+
+    // Filter projects based on the active filter tag
+    const filteredProjects = content.projects.filter(project =>
+        activeFilter === "All" || (project.tags && project.tags.includes(activeFilter))
+    );
 
     return (
         <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
@@ -159,8 +168,24 @@ export default function Archive({ content }) {
                 </p>
             </div>
 
+            {/* Filter Pills */}
+            <div className="flex flex-wrap gap-3 mb-10">
+                {filters.map(filter => (
+                    <button
+                        key={filter}
+                        onClick={() => setActiveFilter(filter)}
+                        className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple ${activeFilter === filter
+                                ? 'bg-blurple text-white border-blurple shadow-md'
+                                : 'bg-slate-50 text-ink/60 border-ink/10 hover:border-blurple/50 hover:text-blurple hover:bg-white'
+                            }`}
+                    >
+                        {filter}
+                    </button>
+                ))}
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-[2000px]">
-                {content.projects.map((project, idx) => (
+                {filteredProjects.map((project, idx) => (
                     <ArchiveCard
                         key={project.slug}
                         index={idx + 1}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero3D from '../components/Hero3D';
+import VoiceOrb3D from '../components/VoiceOrb3D';
 import { CONTENT } from '../content';
 
 export default function VoiceGuidelinesCaseStudy() {
@@ -17,9 +17,7 @@ export default function VoiceGuidelinesCaseStudy() {
             <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center overflow-hidden">
-                    <Hero3D
-                        modelUrl={`${import.meta.env.BASE_URL}${CONTENT.work.projects.find(p => p.slug === 'voice-guidelines').modelUrl}`}
-                    />
+                    <VoiceOrb3D />
                 </div>
             </div>
 

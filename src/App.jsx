@@ -8,6 +8,14 @@ import Footer from './sections/Footer';
 import CaseStudyOverlay from './sections/CaseStudyOverlay';
 import { OverlayProvider } from './contexts/OverlayContext';
 import { CONTENT } from './content';
+import { useGLTF } from '@react-three/drei';
+
+// Preload 3D models globally so they open instantly without a loading flash
+CONTENT.work.projects.forEach(project => {
+  if (project.modelUrl) {
+    useGLTF.preload(`${import.meta.env.BASE_URL}${project.modelUrl}`);
+  }
+});
 
 function Home() {
   return (

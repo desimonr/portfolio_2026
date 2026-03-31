@@ -49,7 +49,9 @@ export default function InvisibleAICaseStudy() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Research revealed that while site managers valued the AI's thoroughness, they needed a way to scope results; 99% of searches were for specific body numbers on individual lines. I also found that users were manually jumping between adjacent cameras because the results didn't help them understand spatial relationships. The AI's thoroughness had become a UX liability that needed filtering and context to solve.
                         </p>
-                        <div className="w-full h-64 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ research.png – loads on live site ]</div>
+                        <div className="w-full rounded-xl border border-white/40 flex items-center justify-center overflow-hidden mb-6">
+                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/research.png`} alt="UX Research visualization of complex factory camera networks" className="w-full h-auto object-cover" />
+                        </div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
