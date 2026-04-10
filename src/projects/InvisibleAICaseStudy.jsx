@@ -33,7 +33,7 @@ export default function InvisibleAICaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">About the Project</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Invisible AI builds computer vision software that tracks worker safety and operational progress across factory camera networks. As a UX Consultant, I was brought in to redesign the video review interface–the core application where site managers and engineers search for, watch, and act on AI-organized footage.
+                            Invisible AI builds computer vision software that tracks worker safety and operational progress across factory camera networks. As a UX Consultant, I was brought in to redesign the video review interface – the core application where site managers and engineers search for, watch, and act on AI-organized footage.
                         </p>
                     </section>
 
@@ -57,9 +57,12 @@ export default function InvisibleAICaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Key Design Decisions</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            The redesign introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. I also updated the video player layout to surface spatial context–showing each clip’s relationship to adjacent cameras–and added clear affordances for users to verify and correct the AI's occasional misidentifications.
+                            The redesign introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. I also updated the video player layout to surface spatial context – showing each clip’s relationship to adjacent cameras – and added clear affordances for users to verify and correct the AI's occasional misidentifications.
                         </p>
-                        <div className="w-full h-96 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ new_ui.png – loads on live site ]</div>
+                        <div className="w-full h-96 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">
+                        </div>
+                        <img src={`${import.meta.env.BASE_URL}img/invisible_ai/wireframes.jpg`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
+                        <img src={`${import.meta.env.BASE_URL}img/invisible_ai/new_ui.png`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
