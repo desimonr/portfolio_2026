@@ -57,10 +57,10 @@ export default function VoiceGuidelinesCaseStudy() {
 
                         <div className="grid grid-cols-1 gap-10 mb-12">
                             <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center p-6">
-                                <img src="img/voice_guidelines/survey-humor-enthusiasm.png" alt="Humor and Enthusiasm Survey Results" className="w-full h-auto object-contain bg-white/50 rounded-xl p-4 shadow-sm" />
+                                <img src="img/voice_guidelines/survey-humor-enthusiasm.png" alt="Humor and Enthusiasm Survey Results" className="w-full h-auto object-cover" />
                             </div>
                             <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center p-6">
-                                <img src="img/voice_guidelines/survey-respect-formalness.png" alt="Respect and Formalness Survey Results" className="w-full h-auto object-contain bg-white/50 rounded-xl p-4 shadow-sm" />
+                                <img src="img/voice_guidelines/survey-respect-formalness.png" alt="Respect and Formalness Survey Results" className="w-full h-auto object-cover" />
                             </div>
                         </div>
                     </section>
