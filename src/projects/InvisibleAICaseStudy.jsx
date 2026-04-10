@@ -59,10 +59,18 @@ export default function InvisibleAICaseStudy() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             The redesign introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. I also updated the video player layout to surface spatial context – showing each clip’s relationship to adjacent cameras – and added clear affordances for users to verify and correct the AI's occasional misidentifications.
                         </p>
-                        <div className="w-full h-96 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">
+                        <div className="w-full rounded-xl border border-white/40 overflow-hidden mb-6 bg-slate flex flex-col">
+                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/wireframes.jpg`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover m-0" />
+                            <div className="bg-white/50 border-t border-white/40 px-4 py-3 text-sm text-ink/70 font-medium text-center">
+                                Low-fidelity sketches
+                            </div>
                         </div>
-                        <img src={`${import.meta.env.BASE_URL}img/invisible_ai/wireframes.jpg`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
-                        <img src={`${import.meta.env.BASE_URL}img/invisible_ai/new_ui.png`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
+                        <div className="w-full rounded-xl border border-white/40 overflow-hidden mb-6 bg-slate flex flex-col">
+                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/new_ui.png`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover m-0" />
+                            <div className="bg-white/50 border-t border-white/40 px-4 py-3 text-sm text-ink/70 font-medium text-center">
+                                Final design
+                            </div>
+                        </div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">

@@ -48,7 +48,7 @@ export default function VoiceGuidelinesCaseStudy() {
                         </p>
 
                         <div className="w-full bg-slate rounded-xl border border-white/40 overflow-hidden mb-8">
-                            <img src="img/voice_guidelines/nng-dimensions.png" alt="NNG Voice Dimensions" className="w-full h-auto object-cover" />
+                            <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/nng-dimensions.png`} alt="NNG Voice Dimensions" className="w-full h-auto object-cover" />
                         </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
@@ -56,11 +56,11 @@ export default function VoiceGuidelinesCaseStudy() {
                         </p>
 
                         <div className="grid grid-cols-1 gap-10 mb-12">
-                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center p-6">
-                                <img src="img/voice_guidelines/survey-humor-enthusiasm.png" alt="Humor and Enthusiasm Survey Results" className="w-full h-auto object-cover" />
+                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center">
+                                <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/survey-humor-enthusiasm.png`} alt="Humor and Enthusiasm Survey Results" className="w-full h-auto object-cover" />
                             </div>
-                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center p-6">
-                                <img src="img/voice_guidelines/survey-respect-formalness.png" alt="Respect and Formalness Survey Results" className="w-full h-auto object-cover" />
+                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center">
+                                <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/survey-respect-formalness.png`} alt="Respect and Formalness Survey Results" className="w-full h-auto object-cover" />
                             </div>
                         </div>
                     </section>
@@ -74,7 +74,7 @@ export default function VoiceGuidelinesCaseStudy() {
                         <div className="w-full flex justify-center mt-6 mb-12">
                             <div className="w-full max-w-[320px] bg-white rounded-[2.5rem] border-[6px] border-slate/50 overflow-hidden shadow-2xl relative">
                                 <div className="absolute top-0 inset-x-0 h-6 bg-slate/50 z-10 flex justify-center items-end pb-1 rounded-b-xl max-w-[120px] mx-auto"></div>
-                                <img src="img/voice_guidelines/chatbot.gif" alt="Chatbot Interaction Demo" className="w-full h-auto object-cover relative z-0" />
+                                <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/chatbot.gif`} alt="Chatbot Interaction Demo" className="w-full h-auto object-cover relative z-0" />
                             </div>
                         </div>
                     </section>
