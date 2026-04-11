@@ -37,7 +37,7 @@ export const CONTENT = {
             {
                 id: 1,
                 slug: "invisible-ai",
-                title: "Invisible AI",
+                title: "Invisible AI Video Center",
                 desc: "Redesigning a computer vision review interface to make high-volume AI video data manageable and actionable.",
                 thumb: "img/invisible_ai_thumb.png",
                 modelUrl: "img/invisible_ai/3D iMacs Mockup.glb",
