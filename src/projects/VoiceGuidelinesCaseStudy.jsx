@@ -27,7 +27,7 @@ export default function VoiceGuidelinesCaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Objective</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            At the end of 2020, Northwestern Medicine (NM) launched a proprietary NLP-powered chatbot on NM.org to address overwhelming patient demand for self-service options. Built on Microsoft Azure Language Services, the chatbot used natural language processing to understand patient intent and route users to the right information – from finding a doctor to paying a bill.
+                            At the end of 2020, Northwestern Medicine (NM) launched a proprietary NLP-powered chatbot on NM.org to address <strong className="text-blurple">overwhelming patient demand for self-service options.</strong> Built on Microsoft Azure Language Services, the chatbot used natural language processing to understand patient intent and route users to the right information – from finding a doctor to paying a bill.
                         </p>
                         <p className="text-ink/80 leading-relaxed">
                             My role was to ensure that the chatbot's human-written responses and the AI system's configured personality worked together as a seamless, consistent experience. I worked with stakeholders across the health system to develop formal voice guidelines that would govern both the copy written by content teams and the tone parameters configured in the NLP model itself.
@@ -37,7 +37,7 @@ export default function VoiceGuidelinesCaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">The Design Challenge</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Designing voice for a conversational AI system is more complex than defining a brand voice for static content. The chatbot's responses emerge from two interacting layers: human-written copy authored by content writers, and personality parameters configured directly in the NLP model. A misalignment between these two layers would produce an inconsistent, untrustworthy user experience – especially problematic in healthcare, where patients are often stressed or confused.
+                            Designing voice for a conversational AI system is more complex than defining a brand voice for static content. The chatbot's responses emerge from <strong className="text-blurple">two interacting layers:</strong> human-written copy authored by content writers, and personality parameters configured directly in the NLP model. A misalignment between these two layers would produce an inconsistent, untrustworthy user experience – <strong className="text-blurple">especially problematic in healthcare, where patients are often stressed or confused.</strong>
                         </p>
                     </section>
 
@@ -52,7 +52,7 @@ export default function VoiceGuidelinesCaseStudy() {
                         </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            I mapped the dimensions for the existing NM brand voice, the results from the survey, and 10 competitors with chatbots or voice assistants to see how they compared. Across all four dimensions, a majority of stakeholders agreed to shift one point toward the warmer, friendlier end of the scale for the chatbot, breaking from the broader corporate brand and aligning more with mainstream voice assistants like Siri and Google.
+                            I mapped the dimensions for the existing NM brand voice, the results from the survey, and 10 competitors with chatbots or voice assistants to see how they compared. Across all four dimensions, a majority of stakeholders agreed to shift one point toward the warmer, friendlier end of the scale for the chatbot, <strong className="text-blurple">breaking from the broader corporate brand and aligning more with mainstream voice assistants like Siri and Google.</strong>
                         </p>
 
                         <div className="grid grid-cols-1 gap-10 mb-12">
