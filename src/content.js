@@ -126,6 +126,6 @@ export const CONTENT = {
             { name: "LinkedIn", href: "https://linkedin.com/in/raymonddesimone" },
             { name: "GitHub", href: "https://github.com/rdes" }
         ],
-        copyright: "RAYMOND DESIMONE. DESIGNED IN THE INTERFACE."
+        copyright: "RAYMOND DESIMONE."
     }
 };
