@@ -1,5 +1,4 @@
 import React from 'react';
-import Hero3D from '../components/Hero3D';
 import { CONTENT } from '../content';
 
 export default function PortfolioAIStudy() {
@@ -13,19 +12,8 @@ export default function PortfolioAIStudy() {
             </header>
 
             {/* Hero Image */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10 pointer-events-none" />
-                <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center overflow-hidden">
-                    <Hero3D
-                        modelUrl={`${import.meta.env.BASE_URL}${CONTENT.work.projects.find(p => p.slug === 'ai-portfolio').modelUrl}`}
-                    />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="glass-panel p-6 rounded-2xl border border-white/20 backdrop-blur-xl max-w-sm text-center">
-                        <p className="text-ink font-mono text-sm uppercase tracking-widest mb-2">Technical Case Study</p>
-                        <h2 className="text-2xl font-bold text-ink tracking-tight">System Architecture & AI Operations</h2>
-                    </div>
-                </div>
+            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative">
+                <img src={`${import.meta.env.BASE_URL}img/ai_portfolio/thumb.png`} alt="Portfolio Home Page" className="w-full h-full object-cover object-top" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 px-6 md:px-0 pb-20 md:pb-0">

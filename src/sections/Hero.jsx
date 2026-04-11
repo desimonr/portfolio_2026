@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { ArrowRight, Code2 } from 'lucide-react';
+import { CornerRightDown, Code2 } from 'lucide-react';
 
 export default function Hero({ content }) {
     const containerRef = useRef(null);
@@ -89,7 +89,7 @@ export default function Hero({ content }) {
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                         <a href="#work" className="hero-button magnetic flex items-center justify-center gap-2 bg-ink text-white px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all group">
                             <span>{content.cta}</span>
-                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            <CornerRightDown size={18} className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
                         </a>
                     </div>
                 </div>
