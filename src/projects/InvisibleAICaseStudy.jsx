@@ -49,7 +49,7 @@ export default function InvisibleAICaseStudy() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Research revealed that while site managers valued the AI's thoroughness, they needed a way to scope results; 99% of searches were for specific body numbers on individual lines. I also found that users were manually jumping between adjacent cameras because the results didn't help them understand spatial relationships. The AI's thoroughness had become a UX liability that needed filtering and context to solve.
                         </p>
-                        <div className="w-full rounded-xl border border-white/40 flex items-center justify-center overflow-hidden mb-6">
+                        <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/invisible_ai/research.png`} alt="UX Research visualization of complex factory camera networks" className="w-full h-auto object-cover" />
                         </div>
                     </section>
@@ -59,16 +59,16 @@ export default function InvisibleAICaseStudy() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             The redesign introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. I also updated the video player layout to surface spatial context – showing each clip’s relationship to adjacent cameras – and added clear affordances for users to verify and correct the AI's occasional misidentifications.
                         </p>
-                        <div className="w-full rounded-xl border border-white/40 overflow-hidden mb-6 bg-slate flex flex-col">
-                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/wireframes.jpg`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover m-0" />
-                            <div className="bg-white/50 border-t border-white/40 px-4 py-3 text-sm text-ink/70 font-medium text-center">
-                                Low-fidelity sketches
+                        <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
+                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/wireframes.jpg`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
+                            <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <p className="text-xs font-mono text-ink/60 uppercase">Low-fidelity sketches</p>
                             </div>
                         </div>
-                        <div className="w-full rounded-xl border border-white/40 overflow-hidden mb-6 bg-slate flex flex-col">
-                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/new_ui.png`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover m-0" />
-                            <div className="bg-white/50 border-t border-white/40 px-4 py-3 text-sm text-ink/70 font-medium text-center">
-                                Final design
+                        <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
+                            <img src={`${import.meta.env.BASE_URL}img/invisible_ai/new_ui.png`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
+                            <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <p className="text-xs font-mono text-ink/60 uppercase">Final design</p>
                             </div>
                         </div>
                     </section>

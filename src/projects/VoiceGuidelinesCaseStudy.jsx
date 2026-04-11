@@ -47,7 +47,7 @@ export default function VoiceGuidelinesCaseStudy() {
                             The chatbot's implementation touched teams across the health system – brand, clinical, and operational. I designed a structured survey to draw on their collective expertise in patient interactions and customer service, using the Nielsen Norman Group (NNG) tone of voice dimensions as the survey framework. This ensured responses would be directly applicable to both the written guidelines and the model configuration.
                         </p>
 
-                        <div className="w-full bg-slate rounded-xl border border-white/40 overflow-hidden mb-8">
+                        <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-8">
                             <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/nng-dimensions.png`} alt="NNG Voice Dimensions" className="w-full h-auto object-cover" />
                         </div>
 
@@ -56,10 +56,10 @@ export default function VoiceGuidelinesCaseStudy() {
                         </p>
 
                         <div className="grid grid-cols-1 gap-10 mb-12">
-                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center">
+                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden">
                                 <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/survey-humor-enthusiasm.png`} alt="Humor and Enthusiasm Survey Results" className="w-full h-auto object-cover" />
                             </div>
-                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden flex items-center justify-center">
+                            <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden">
                                 <img src={`${import.meta.env.BASE_URL}img/voice_guidelines/survey-respect-formalness.png`} alt="Respect and Formalness Survey Results" className="w-full h-auto object-cover" />
                             </div>
                         </div>
