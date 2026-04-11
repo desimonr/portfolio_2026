@@ -31,7 +31,7 @@ export default function MyNMApp() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Objective</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Hundreds of thousands of Northwestern Medicine patients manage their healthcare through the MyNM app. However, the mobile experience was hard to navigate and lacked key features available on the web experience. As the UX designer and researcher, I led the redesign effort to modernize the app, improve usability, and ensure feature parity with MyNM's core capabilities.
+                            <strong className="text-blurple">Hundreds of thousands of Northwestern Medicine patients</strong> manage their healthcare through the MyNM app. However, the mobile experience was hard to navigate and lacked key features available on the web experience. As the UX designer and researcher, I led the redesign effort to modernize the app, improve usability, and ensure feature parity with MyNM's core capabilities.
                         </p>
                     </section>
 
@@ -45,7 +45,7 @@ export default function MyNMApp() {
                         </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            To ensure consistency, I performed a content audit of the app and web version to identify every feature that was missing. In an effort to improve on the web experience, I looked for overall trends in mobile app navigation by doing a competitive analysis of 10 of the top apps across the iOS App Store and Google Play as well as 12 direct competitors.
+                            To ensure consistency, I performed a content audit of the app and web version to identify every feature that was missing. In an effort to improve on the web experience, I looked for overall trends in mobile app navigation by doing <strong className="text-blurple">a competitive analysis of 10 of the top apps across the iOS App Store and Google Play as well as 12 direct competitors.</strong>
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/competitors.png`} alt="Competitor Analysis" className="w-full h-auto object-cover" />
@@ -65,7 +65,7 @@ export default function MyNMApp() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Final Thoughts</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            The redesigned app was praised by both users and stakeholders. Users found it much easier to use. Many liked that it now felt more like the MyNM web version, which made it less confusing. I intend to monitor user interactions and make iterative improvements as needed.
+                            The redesigned app was <strong className="text-blurple">praised by both users and stakeholders.</strong> Users found it much easier to use. Many liked that it now felt more like the MyNM web version, which made it less confusing. I intend to monitor user interactions and make iterative improvements as needed.
                         </p>
                     </section>
 

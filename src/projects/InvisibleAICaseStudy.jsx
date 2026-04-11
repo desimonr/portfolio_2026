@@ -47,7 +47,7 @@ export default function InvisibleAICaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Research & Insights</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Research revealed that while site managers valued the AI's thoroughness, they needed a way to scope results; 99% of searches were for specific body numbers on individual lines. I also found that users were manually jumping between adjacent cameras because the results didn't help them understand spatial relationships. Without filters and context, the system was little more than a search engine for video clips.
+                            Research revealed that while site managers valued the AI's thoroughness, they needed a way to scope results; <strong className="text-blurple">99% of searches were for specific body numbers on individual lines.</strong> I also found that users were manually jumping between adjacent cameras because the results didn't help them understand spatial relationships. Without filters and context, <strong className="text-blurple">the system was little more than a search engine for video clips.</strong>
                         </p>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Using this research, I created a user flow to visualize the current experience and identify key areas for improvement.
@@ -82,7 +82,7 @@ export default function InvisibleAICaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">System & Outcome</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            In parallel, I modernized the product's design system with components that reflected Invisible AI's brand identity and documented guidelines. The outcome was a video review experience built for scale, addressing the complexity of an AI that sees everything through an interface that helps users focus on what matters.
+                            In parallel, I modernized the product's design system with components that reflected Invisible AI's brand identity and documented guidelines. The outcome was a <strong className="text-blurple">video review experience built for scale,</strong> addressing the complexity of an AI that sees everything through an interface that helps users focus on what matters.
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/invisible_ai/design-system.png`} alt="Design system components for Invisible AI" className="w-full h-auto object-cover" />
