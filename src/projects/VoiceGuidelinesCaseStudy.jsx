@@ -9,7 +9,7 @@ export default function VoiceGuidelinesCaseStudy() {
             <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">Conversational AI Voice Guidelines</h1>
                 <p className="text-xl text-ink/70 font-medium max-w-3xl mx-auto text-balance">
-                    Standardizing conversational NLP frameworks across product suites.
+                    Standardizing conversational NLP voice for chatbots and voice assistants.
                 </p>
             </header>
 

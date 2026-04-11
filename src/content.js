@@ -46,8 +46,8 @@ export const CONTENT = {
             {
                 id: 2,
                 slug: "voice-guidelines",
-                title: "Voice Guidelines",
-                desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses across product suites.",
+                title: "Conversational AI Voice Guidelines",
+                desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses for a health system.",
                 thumb: "img/voice_guidelines_thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
                 tags: ["AI", "Design System"]
@@ -55,7 +55,7 @@ export const CONTENT = {
             {
                 id: 3,
                 slug: "mynm-app",
-                title: "MyNM App",
+                title: "MyNM App Redesign",
                 desc: "Modernizing a major healthcare mobile app through research-driven IA and industry-standard navigation patterns.",
                 thumb: "img/mynm_app_thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
@@ -64,7 +64,7 @@ export const CONTENT = {
             {
                 id: 4,
                 slug: "ai-portfolio",
-                title: "AI Portfolio",
+                title: "AI Portfolio Architecture",
                 desc: "A meta case study on how this premium, scalable React architecture was built efficiently in tandem with AI assistance.",
                 thumb: "img/ai_portfolio/thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
