@@ -146,7 +146,7 @@ export default function Archive({ content }) {
     const [activeFilter, setActiveFilter] = useState("All");
 
     // Curated list of filters relevant for a senior UX role based on project tags
-    const filters = ["All", "AI", "Design System", "Information Architecture", "UX Strategy"];
+    const filters = ["All", "AI", "Design System", "Information Architecture", "Research"];
     // Map of icons to project slugs for easy editing
     const iconMap = {
         'invisible-ai': Layers,
@@ -175,8 +175,8 @@ export default function Archive({ content }) {
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
                         className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple ${activeFilter === filter
-                                ? 'bg-blurple text-white border-blurple shadow-md'
-                                : 'bg-slate-50 text-ink/60 border-ink/10 hover:border-blurple/50 hover:text-blurple hover:bg-white'
+                            ? 'bg-blurple text-white border-blurple shadow-md'
+                            : 'bg-slate-50 text-ink/60 border-ink/10 hover:border-blurple/50 hover:text-blurple hover:bg-white'
                             }`}
                     >
                         {filter}
