@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <rect width="800" height="500" fill="#F6F9FC"/>
-  <rect x="60" y="60" width="680" height="380" rx="16" fill="#EEF2F7"/>
-  <text x="400" y="235" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle" letter-spacing="4" font-weight="500">NM.ORG DESIGN SYSTEM</text>
-  <text x="400" y="270" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#CBD5E1" text-anchor="middle" letter-spacing="2">Thumbnail coming soon</text>
-</svg>

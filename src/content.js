@@ -69,14 +69,6 @@ export const CONTENT = {
                 thumb: "img/ai_portfolio/thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
                 tags: ["AI", "Design System"]
-            },
-            {
-                id: 5,
-                slug: "nm-design-system",
-                title: "NM.org Design System",
-                desc: "Collaborating with designers and developers to build a shared design language with Figma Variables and Code Connect for NM.org.",
-                thumb: "img/nm_design_system/thumb.png",
-                tags: ["Design System", "Research"]
             }
         ]
     },

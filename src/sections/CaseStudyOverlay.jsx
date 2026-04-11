@@ -6,15 +6,13 @@ import InvisibleAICaseStudy from '../projects/InvisibleAICaseStudy';
 import VoiceGuidelinesCaseStudy from '../projects/VoiceGuidelinesCaseStudy';
 import MyNMApp from '../projects/MyNMApp';
 import PortfolioAIStudy from '../projects/PortfolioAIStudy';
-import NMDesignSystem from '../projects/NMDesignSystem';
 import { useOverlayContext } from '../contexts/OverlayContext';
 
 const CASE_STUDIES = [
-    { slug: 'invisible-ai', label: 'Invisible AI Video Center', Component: InvisibleAICaseStudy, bg: 'bg-indigo-50' },
-    { slug: 'voice-guidelines', label: 'Conversational AI Voice Guidelines', Component: VoiceGuidelinesCaseStudy, bg: 'bg-indigo-50' },
-    { slug: 'mynm-app', label: 'MyNM App Redesign', Component: MyNMApp, bg: 'bg-indigo-50' },
-    { slug: 'ai-portfolio', label: 'AI Portfolio Architecture', Component: PortfolioAIStudy, bg: 'bg-indigo-50' },
-    { slug: 'nm-design-system', label: 'NM.org Design System', Component: NMDesignSystem, bg: 'bg-indigo-50' },
+    { slug: 'invisible-ai', label: 'Invisible AI', Component: InvisibleAICaseStudy, bg: 'bg-indigo-50' },
+    { slug: 'voice-guidelines', label: 'Voice Guidelines', Component: VoiceGuidelinesCaseStudy, bg: 'bg-indigo-50' },
+    { slug: 'mynm-app', label: 'MyNM App', Component: MyNMApp, bg: 'bg-indigo-50' },
+    { slug: 'ai-portfolio', label: 'AI Portfolio', Component: PortfolioAIStudy, bg: 'bg-indigo-50' },
 ];
 
 export default function CaseStudyOverlay({ slug }) {
