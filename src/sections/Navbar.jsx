@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Linkedin, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar({ content }) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
     // derive a base path without trailing slash so we can match `/${base}`
     // whether or not the URL ends with a slash.
     const rawBase = import.meta.env.BASE_URL || '/';
@@ -32,6 +33,27 @@ export default function Navbar({ content }) {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    const handleNavClick = (e, linkHref) => {
+        if (!linkHref.startsWith('#')) return;
+        
+        e.preventDefault();
+        setMobileMenuOpen(false);
+        
+        const id = linkHref.substring(1);
+        
+        if (path !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        } else {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+            window.history.pushState({}, '', `${base || '/'}#${id}`);
+        }
+    };
+
     return (
         <nav className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out ${scrolled || mobileMenuOpen ? 'w-[90%] max-w-5xl glass-panel py-3 px-6 rounded-3xl md:rounded-full' : 'w-full max-w-7xl py-6 px-12 bg-transparent'}`}>
             <div className="flex items-center justify-between">
@@ -41,11 +63,13 @@ export default function Navbar({ content }) {
 
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => {
-                        const href = `${base}${link.href}`; // base has no trailing slash
+                        const isAnchor = link.href.startsWith('#');
+                        const href = isAnchor ? link.href : `${base}${link.href}`;
                         return (
                             <a
                                 key={link.name}
                                 href={href}
+                                onClick={(e) => handleNavClick(e, link.href)}
                                 className="text-sm font-medium text-ink/70 hover:text-ink transition-colors link-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple rounded-md"
                             >
                                 {link.name}
@@ -81,12 +105,19 @@ export default function Navbar({ content }) {
                 <div className="md:hidden pt-6 pb-4 border-t border-ink/10 mt-4 animate-in slide-in-from-top-4 fade-in duration-200">
                     <div className="flex flex-col gap-4">
                         {navLinks.map((link) => {
-                            const href = `${base}${link.href}`;
+                            const isAnchor = link.href.startsWith('#');
+                            const href = isAnchor ? link.href : `${base}${link.href}`;
                             return (
                                 <a
                                     key={link.name}
                                     href={href}
-                                    onClick={() => setMobileMenuOpen(false)}
+                                    onClick={(e) => {
+                                        if (isAnchor) {
+                                            handleNavClick(e, link.href);
+                                        } else {
+                                            setMobileMenuOpen(false);
+                                        }
+                                    }}
                                     className="text-lg font-medium text-ink/80 hover:text-blurple transition-colors px-2"
                                 >
                                     {link.name}

@@ -40,12 +40,16 @@ export default function MyNMApp() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Combining data from the in-app feedback form with results from a survey of app users, I found that users' biggest pain point was locating important information in a timely manner. Much of this stemmed from confusion over the MyNM app's custom layout and a desire for something closer to the stock MyChart layout that the web version of MyNM uses.
                         </p>
-                        <div className="w-full h-64 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ Old Designs with annotations.png ]</div>
+                        <div className="w-full bg-slate rounded-xl border border-white/40 overflow-hidden mb-6">
+                            <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/old-designs.png`} alt="Old Designs with annotations" className="w-full h-auto object-cover" />
+                        </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
                             To ensure consistency, I performed a content audit of the app and web version to identify every feature that was missing. In an effort to improve on the web experience, I looked for overall trends in mobile app navigation by doing a competitive analysis of 10 of the top apps across the iOS App Store and Google Play as well as 12 direct competitors.
                         </p>
-                        <div className="w-full h-64 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ Competitors.png ]</div>
+                        <div className="w-full bg-slate rounded-xl border border-white/40 overflow-hidden mb-6">
+                            <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/competitors.png`} alt="Competitor Analysis" className="w-full h-auto object-cover" />
+                        </div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
@@ -53,7 +57,9 @@ export default function MyNMApp() {
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Following the MyNM web layout, I replaced the Home Screen icons with the Health Feed and brought shortcuts to the navigation. Instead of using the hamburger menu, though, I opted to follow industry trends and use a bottom tab bar as the persistent navigation, with "My Tools" representing the searchable menu of all activities.
                         </p>
-                        <div className="w-full h-96 bg-slate rounded-xl border border-white/40 flex items-center justify-center font-mono text-sm text-ink/40 mb-6">[ New Designs With Annotations.png ]</div>
+                        <div className="w-full bg-slate rounded-xl border border-white/40 overflow-hidden mb-6">
+                            <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/new-designs.png`} alt="New Designs with annotations" className="w-full h-auto object-cover" />
+                        </div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
