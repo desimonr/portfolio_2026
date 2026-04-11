@@ -41,7 +41,7 @@ export const CONTENT = {
                 desc: "Redesigning a computer vision review interface to make high-volume AI video data manageable and actionable.",
                 thumb: "img/invisible_ai_thumb.png",
                 modelUrl: "img/invisible_ai/3D iMacs Mockup.glb",
-                tags: ["AI", "UX Strategy"]
+                tags: ["AI", "Research", "Information Architecture"]
             },
             {
                 id: 2,
@@ -50,7 +50,7 @@ export const CONTENT = {
                 desc: "Developing formal voice and personality guidelines to standardize NLP-powered chatbot responses for a health system.",
                 thumb: "img/voice_guidelines_thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
-                tags: ["AI", "Design System"]
+                tags: ["AI", "Research"]
             },
             {
                 id: 3,
@@ -59,7 +59,7 @@ export const CONTENT = {
                 desc: "Modernizing a major healthcare mobile app through research-driven IA and industry-standard navigation patterns.",
                 thumb: "img/mynm_app_thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",
-                tags: ["Information Architecture", "UX Strategy", "Design System"]
+                tags: ["Information Architecture", "Research", "Design System"]
             },
             {
                 id: 4,
