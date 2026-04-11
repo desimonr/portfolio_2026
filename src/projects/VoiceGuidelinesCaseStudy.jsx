@@ -52,7 +52,7 @@ export default function VoiceGuidelinesCaseStudy() {
                         </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            We mapped the existing dimensions for different NM entities to identify where the new conversational AI should sit. Across all four dimensions, a majority of stakeholders agreed to shift one point toward the warmer, friendlier end of the scale for the chatbot, distinct from the broader corporate brand.
+                            I mapped the dimensions for the existing NM brand voice, the results from the survey, and 10 competitors with chatbots or voice assistants to see how they compared. Across all four dimensions, a majority of stakeholders agreed to shift one point toward the warmer, friendlier end of the scale for the chatbot, breaking from the broader corporate brand and aligning more with mainstream voice assistants like Siri and Google.
                         </p>
 
                         <div className="grid grid-cols-1 gap-10 mb-12">
