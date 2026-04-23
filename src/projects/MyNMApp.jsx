@@ -14,11 +14,11 @@ export default function MyNMApp() {
             </header>
 
             {/* Hero Image / Header */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
+            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-appbg border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group transition-colors duration-300">
                 {/* Optional glow effect behind the 3D canvas */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10 pointer-events-none" />
 
-                <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-zinc-100 dark:bg-appbg flex items-center justify-center overflow-hidden transition-colors duration-300">
                     <Hero3D
                         modelUrl={`${import.meta.env.BASE_URL}${CONTENT.work.projects.find(p => p.slug === 'mynm-app').modelUrl}`}
                     />
@@ -28,31 +28,31 @@ export default function MyNMApp() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 px-6 md:px-0 pb-20 md:pb-0">
                 <div className="md:col-span-2 space-y-12">
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Objective</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             <strong className="text-blurple">Hundreds of thousands of Northwestern Medicine patients</strong> manage their healthcare through the MyNM app. However, the mobile experience was hard to navigate and lacked key features available on the web experience. As the UX designer and researcher, I led the redesign effort to modernize the app, improve usability, and ensure feature parity with MyNM's core capabilities.
                         </p>
                     </section>
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Research</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Combining data from the in-app feedback form with results from a survey of app users, I found that users' biggest pain point was locating important information in a timely manner. Much of this stemmed from confusion over the MyNM app's custom layout and a desire for something closer to the stock MyChart layout that the web version of MyNM uses.
                         </p>
-                        <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
+                        <div className="w-full bg-appbg dark:bg-white/5 rounded-2xl border border-white/40 dark:border-white/10 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/old-designs.png`} alt="Old Designs with annotations" className="w-full h-auto object-cover" />
                         </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
                             To ensure consistency, I performed a content audit of the app and web version to identify every feature that was missing. In an effort to improve on the web experience, I looked for overall trends in mobile app navigation by doing <strong className="text-blurple">a competitive analysis of 10 of the top apps across the iOS App Store and Google Play as well as 12 direct competitors.</strong>
                         </p>
-                        <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
+                        <div className="w-full bg-slate dark:bg-white/5 rounded-2xl border border-white/40 dark:border-white/10 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/competitors.png`} alt="Competitor Analysis" className="w-full h-auto object-cover" />
                         </div>
                     </section>
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">New Design</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Following the MyNM web layout, I replaced the Home Screen icons with the Health Feed and brought shortcuts to the navigation. Instead of using the hamburger menu, though, I opted to follow industry trends and use a bottom tab bar as the persistent navigation, with "My Tools" representing the searchable menu of all activities.
@@ -73,8 +73,8 @@ export default function MyNMApp() {
 
                 {/* Info Sidebar */}
                 <aside className="md:col-span-1">
-                    <div className="glass-card p-8 rounded-3xl">
-                        <h3 className="text-lg font-bold text-ink mb-6 pb-4 border-b border-ink/10">Project Details</h3>
+                    <div className="glass-card p-8 rounded-3xl sticky top-32">
+                        <h3 className="text-lg font-bold text-appfg mb-6 pb-4 border-b border-appfg/10 dark:border-white/10">Project Details</h3>
 
                         <div className="mb-8">
                             <h4 className="text-xs font-mono text-blurple uppercase tracking-wider mb-3">Responsibilities</h4>

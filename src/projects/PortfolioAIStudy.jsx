@@ -12,21 +12,21 @@ export default function PortfolioAIStudy() {
             </header>
 
             {/* Hero Image */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative">
+            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-appbg border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative transition-colors duration-300">
                 <img src={`${import.meta.env.BASE_URL}img/ai_portfolio/thumb.png`} alt="Portfolio Home Page" className="w-full h-full object-cover object-top" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 px-6 md:px-0 pb-20 md:pb-0">
                 <div className="md:col-span-2 space-y-12">
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">About the Project</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             This portfolio application serves as a practical exploration of AI-assisted engineering applied to high-fidelity interface design. The objective was to architect a highly performant, accessible React application capable of rendering advanced 3D environments while maintaining production-grade code quality and modularity.
                         </p>
                     </section>
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">The Design Challenge</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             The core constraint was balancing complex, GSAP-powered interactions and robust WebGL components with strict performance benchmarks and accessibility standards. This required a scalable architecture where components could be rapidly iterated upon without introducing technical debt:
@@ -38,31 +38,31 @@ export default function PortfolioAIStudy() {
                         </ul>
                     </section>
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Architectural Strategy</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             Development velocity was accelerated through the strategic orchestration of AI agents. Rather than manual drafting, the workflow focused on prompt engineering, architectural planning, and code review. This approach allowed for rapid iteration on granular details like bezier animation curves, tokenized shadow weights, and interactive 3D materials.
                         </p>
 
                         <div className="grid grid-cols-1 gap-6 mb-8 mt-8">
-                            <div className="bg-slate rounded-2xl border border-white/40 overflow-hidden">
+                            <div className="bg-appbg dark:bg-white/5 rounded-2xl border border-white/40 dark:border-white/10 overflow-hidden">
                                 <img src={`${import.meta.env.BASE_URL}img/voice_guidelines_thumb.png`} alt="Voice Guidelines 3D Orb" className="w-full h-auto object-cover" />
-                                <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <div className="p-4 bg-white/50 dark:bg-white/5 backdrop-blur-md border-t border-white/20 dark:border-white/10">
                                     <p className="text-xs font-mono text-ink/60 uppercase">Figure 01: Integrating custom distortion shaders and dynamic directional lighting models for the Voice Guidelines hero.</p>
                                 </div>
                             </div>
                         </div>
                     </section>
 
-                    <section className="prose prose-lg prose-slate max-w-none">
+                    <section className="prose prose-lg prose-slate dark:prose-invert max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Implementation Details</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
                             A central requirement was ensuring all interactive elements met strict usability criteria. Focus management algorithms were implemented to explicitly guide keyboard users through the interface, ensuring focus restoration upon closing complex components like the case study overlays. Performance budgets structured how the layout handled component reflows when transitioning between 2D and 3D contexts.
                         </p>
                         <div className="grid grid-cols-1 gap-6 mb-8 mt-8">
-                            <div className="rounded-xl overflow-hidden border border-white/40 relative">
+                            <div className="rounded-xl overflow-hidden border border-white/40 dark:border-white/10 relative">
                                 <img src={`${import.meta.env.BASE_URL}img/invisible_ai_thumb.png`} alt="Invisible AI Hero" className="w-full h-auto object-cover" />
-                                <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <div className="p-4 bg-white/50 dark:bg-white/5 backdrop-blur-md border-t border-white/20 dark:border-white/10">
                                     <p className="text-xs font-mono text-ink/60 uppercase">Figure 02: Responsive 3D viewport tracking user cursor position, rendered via WebGL within the Invisible AI hero section.</p>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@ export default function PortfolioAIStudy() {
                 {/* Sidebar */}
                 <aside className="md:col-span-1">
                     <div className="glass-card p-8 rounded-3xl sticky top-32">
-                        <h3 className="text-lg font-bold text-ink mb-6 pb-4 border-b border-ink/10">Tech Stack</h3>
+                        <h3 className="text-lg font-bold text-appfg mb-6 pb-4 border-b border-appfg/10 dark:border-white/10">Tech Stack</h3>
                         <div className="mb-8">
                             <h4 className="text-xs font-mono text-blurple uppercase tracking-wider mb-3">AI Partners</h4>
                             <ul className="space-y-2 text-ink/80 font-medium">

@@ -3,9 +3,11 @@ import gsap from 'gsap';
 import { ArrowUpRight, Activity, Terminal, Layers } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useOverlayContext } from '../contexts/OverlayContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const ArchiveCard = ({ title, desc, thumb, icon: Icon, index, to }) => {
     const cardRef = useRef(null);
+    const { theme } = useTheme();
     const contentRef = useRef(null);
     const imageRef = useRef(null);
     const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
@@ -90,21 +92,21 @@ const ArchiveCard = ({ title, desc, thumb, icon: Icon, index, to }) => {
                     triggerRef.current = e.currentTarget;
                 }
             }}
-            className={`block group relative h-[480px] rounded-3xl p-1 bg-gradient-to-br from-white to-slate overflow-hidden cursor-pointer shadow-fintech border border-white/60 transform-style-3d focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple`}
+            className={`block group relative h-[480px] rounded-3xl p-1 bg-gradient-to-br from-white to-slate dark:from-white/10 dark:to-white/5 overflow-hidden cursor-pointer shadow-fintech border border-white/60 dark:border-white/10 transform-style-3d focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple`}
         >
             {/* Dynamic Glare Effect */}
             <div
                 className="absolute inset-0 z-20 transition-opacity duration-300 pointer-events-none"
                 style={{
                     opacity: glare.opacity,
-                    background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 60%)`,
+                    background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, ${theme === 'dark' ? 'rgba(99, 91, 255, 0.15)' : 'rgba(255,255,255,0.8)'} 0%, rgba(255,255,255,0) 60%)`,
                 }}
             />
 
             {/* Inner Card Content */}
-            <div className="relative z-10 w-full h-full bg-slate-50 rounded-[22px] flex flex-col overflow-hidden border border-white/20">
+            <div className="relative z-10 w-full h-full bg-slate-50 dark:bg-appbg rounded-[22px] flex flex-col overflow-hidden border border-white/20 dark:border-white/5">
                 {/* Image Section */}
-                <div className="relative h-1/2 overflow-hidden bg-slate border-b border-white/20">
+                <div className="relative h-1/2 overflow-hidden bg-appbg border-b border-white/20 dark:border-white/5">
                     {thumb && (
                         <img
                             ref={imageRef}
@@ -116,7 +118,7 @@ const ArchiveCard = ({ title, desc, thumb, icon: Icon, index, to }) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate/40 to-transparent" />
 
                     {/* Icon Floating Badge */}
-                    <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white/90 text-blurple flex items-center justify-center backdrop-blur-md border border-white shadow-lg z-10">
+                    <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white/90 dark:bg-appbg/90 text-blurple flex items-center justify-center backdrop-blur-md border border-white dark:border-white/10 shadow-lg z-10">
                         <Icon size={20} />
                     </div>
                 </div>
@@ -130,8 +132,8 @@ const ArchiveCard = ({ title, desc, thumb, icon: Icon, index, to }) => {
                                 <ArrowUpRight size={16} />
                             </div>
                         </div>
-                        <h3 className="text-xl font-bold tracking-tight text-ink mb-2 leading-tight">{title}</h3>
-                        <p className="text-sm text-ink/60 font-medium leading-relaxed">{desc}</p>
+                        <h3 className="text-xl font-bold tracking-tight text-appfg mb-2 leading-tight">{title}</h3>
+                        <p className="text-sm text-appfg/60 font-medium leading-relaxed">{desc}</p>
                     </div>
 
                     {/* Gradient highlight on hover */}
@@ -162,8 +164,8 @@ export default function Archive({ content }) {
     return (
         <section id="work" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
             <div className="mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-ink mb-4">{content.title}</h2>
-                <p className="text-lg text-ink/60 font-medium max-w-xl">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-appfg mb-4">{content.title}</h2>
+                <p className="text-lg text-appfg/60 font-medium max-w-xl">
                     {content.description}
                 </p>
             </div>
@@ -176,7 +178,7 @@ export default function Archive({ content }) {
                         onClick={() => setActiveFilter(filter)}
                         className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple ${activeFilter === filter
                             ? 'bg-blurple text-white border-blurple shadow-md'
-                            : 'bg-slate-50 text-ink/60 border-ink/10 hover:border-blurple/50 hover:text-blurple hover:bg-white'
+                            : 'bg-slate-50 dark:bg-white/5 text-appfg/60 dark:text-appfg/60 border-appfg/10 dark:border-white/10 hover:border-blurple/50 hover:text-blurple hover:bg-white dark:hover:bg-white/10'
                             }`}
                     >
                         {filter}

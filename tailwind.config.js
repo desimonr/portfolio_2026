@@ -4,12 +4,13 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        slate: '#F6F9FC',
-        blurple: '#635BFF',
-        ink: '#0A2540',
+        appbg: 'var(--color-appbg)',
+        blurple: 'var(--color-blurple)',
+        appfg: 'var(--color-appfg)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

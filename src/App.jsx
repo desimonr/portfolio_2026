@@ -7,6 +7,7 @@ import Stack from './sections/Stack';
 import Footer from './sections/Footer';
 import CaseStudyOverlay from './sections/CaseStudyOverlay';
 import { OverlayProvider } from './contexts/OverlayContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { CONTENT } from './content';
 import { useGLTF } from '@react-three/drei';
 
@@ -41,18 +42,20 @@ function App() {
 
   return (
     <Router basename={basename}>
-      <OverlayProvider>
-        <main className="bg-slate min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden">
-          <Navbar content={CONTENT.navbar} />
-          {/*
-           * <Home> is ALWAYS mounted – never remounts when the overlay opens/closes.
-           * This means scroll position is naturally preserved; no scroll-to-top needed.
-           */}
-          <Home />
-          <CaseStudyOverlayManager />
-          <Footer content={CONTENT.footer} />
-        </main>
-      </OverlayProvider>
+      <ThemeProvider>
+        <OverlayProvider>
+          <main className="bg-appbg min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden transition-colors duration-300">
+            <Navbar content={CONTENT.navbar} />
+            {/*
+             * <Home> is ALWAYS mounted – never remounts when the overlay opens/closes.
+             * This means scroll position is naturally preserved; no scroll-to-top needed.
+             */}
+            <Home />
+            <CaseStudyOverlayManager />
+            <Footer content={CONTENT.footer} />
+          </main>
+        </OverlayProvider>
+      </ThemeProvider>
     </Router>
   );
 }

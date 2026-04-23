@@ -2,6 +2,7 @@ import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, Float, Stage, PerspectiveCamera, Environment } from '@react-three/drei';
 import * as THREE from 'three';
+import { useTheme } from '../contexts/ThemeContext';
 
 function Model({ url, baseRotation, scale = 1, position = [0, 0, 0], mousePivotIntensity }) {
     const { scene } = useGLTF(url);
@@ -42,6 +43,9 @@ export default function Hero3D({
     position = [0, 0, 0],
     mousePivotIntensity = [0.15, 0.09] // Default: [horizontal, vertical]
 }) {
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
+
     return (
         <div className="w-full h-full cursor-grab active:cursor-grabbing">
             <Canvas
@@ -53,11 +57,11 @@ export default function Hero3D({
                     <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={25} />
 
                     <Stage
-                        intensity={0.5}
+                        intensity={isDark ? 0.35 : 0.5}
                         environment="city"
                         adjustCamera={false}
                         shadows="contact"
-                        opacity={0.4}
+                        opacity={isDark ? 0.6 : 0.4}
                         contactShadow={{ blur: 2, far: 1 }}
                     >
                         <Float

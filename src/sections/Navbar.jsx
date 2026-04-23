@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Linkedin, Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import ThemeToggle from '../components/ThemeToggle';
 
 export default function Navbar({ content }) {
     const [scrolled, setScrolled] = useState(false);
@@ -79,6 +80,7 @@ export default function Navbar({ content }) {
                 </div>
 
                 <div className="flex items-center gap-4">
+                    <ThemeToggle className="hidden md:flex" />
                     <a
                         href={content.cta.link}
                         target="_blank"
@@ -91,7 +93,7 @@ export default function Navbar({ content }) {
                     </a>
 
                     <button
-                        className="md:hidden text-ink p-2 hover:bg-ink/5 rounded-full transition-colors"
+                        className="md:hidden text-appfg p-2 hover:bg-appfg/5 dark:hover:bg-white/5 rounded-full transition-colors"
                         onClick={toggleMobileMenu}
                         aria-label="Toggle mobile menu"
                     >
@@ -102,8 +104,12 @@ export default function Navbar({ content }) {
 
             {/* Mobile Menu Dropdown */}
             {mobileMenuOpen && (
-                <div className="md:hidden pt-6 pb-4 border-t border-ink/10 mt-4 animate-in slide-in-from-top-4 fade-in duration-200">
+                <div className="md:hidden pt-6 pb-4 border-t border-appfg/10 dark:border-white/10 mt-4 animate-in slide-in-from-top-4 fade-in duration-200">
                     <div className="flex flex-col gap-4">
+                        <div className="flex items-center justify-between px-2 mb-2">
+                            <span className="text-sm font-mono text-appfg/40 dark:text-white/40 uppercase tracking-widest">Theme</span>
+                            <ThemeToggle />
+                        </div>
                         {navLinks.map((link) => {
                             const isAnchor = link.href.startsWith('#');
                             const href = isAnchor ? link.href : `${base}${link.href}`;

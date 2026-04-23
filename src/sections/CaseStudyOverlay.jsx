@@ -9,10 +9,10 @@ import PortfolioAIStudy from '../projects/PortfolioAIStudy';
 import { useOverlayContext } from '../contexts/OverlayContext';
 
 const CASE_STUDIES = [
-    { slug: 'invisible-ai', label: 'Invisible AI', Component: InvisibleAICaseStudy, bg: 'bg-indigo-50' },
-    { slug: 'voice-guidelines', label: 'Voice Guidelines', Component: VoiceGuidelinesCaseStudy, bg: 'bg-indigo-50' },
-    { slug: 'mynm-app', label: 'MyNM App', Component: MyNMApp, bg: 'bg-indigo-50' },
-    { slug: 'ai-portfolio', label: 'AI Portfolio', Component: PortfolioAIStudy, bg: 'bg-indigo-50' },
+    { slug: 'invisible-ai', label: 'Invisible AI', Component: InvisibleAICaseStudy },
+    { slug: 'voice-guidelines', label: 'Voice Guidelines', Component: VoiceGuidelinesCaseStudy },
+    { slug: 'mynm-app', label: 'MyNM App', Component: MyNMApp },
+    { slug: 'ai-portfolio', label: 'AI Portfolio', Component: PortfolioAIStudy },
 ];
 
 export default function CaseStudyOverlay({ slug }) {
@@ -213,7 +213,7 @@ export default function CaseStudyOverlay({ slug }) {
                 {/* Glass panel */}
                 <div
                     ref={panelRef}
-                    className={`relative flex-1 max-w-6xl w-full ${bg ?? 'bg-slate'} rounded-none md:rounded-2xl border-0 md:border md:border-white/50 md:shadow-[0_24px_64px_rgba(0,0,0,0.35)] md:ring-1 md:ring-white/20 overflow-hidden`}
+                    className={`relative flex-1 max-w-6xl w-full ${bg ?? 'bg-appbg'} rounded-none md:rounded-2xl border-0 md:border md:border-white/50 md:shadow-[0_24px_64px_rgba(0,0,0,0.35)] md:ring-1 md:ring-white/20 overflow-hidden`}
                 >
                     {/* Scrollable inner area */}
                     <div
@@ -226,7 +226,7 @@ export default function CaseStudyOverlay({ slug }) {
                         <button
                             onClick={close}
                             aria-label="Close"
-                            className="sticky top-4 float-right mr-4 z-10 w-10 h-10 rounded-full bg-white/30 backdrop-blur-md border border-white/40 flex items-center justify-center text-ink/60 hover:text-ink hover:bg-white/50 transition-all shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple"
+                            className="sticky top-4 float-right mr-4 z-10 w-10 h-10 rounded-full bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/40 dark:border-white/10 flex items-center justify-center text-appfg/60 dark:text-appfg/80 hover:text-appfg hover:bg-white/50 dark:hover:bg-white/20 transition-all shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blurple"
                         >
                             <X size={18} />
                         </button>
@@ -237,17 +237,17 @@ export default function CaseStudyOverlay({ slug }) {
                         </div>
 
                         {/* Bottom prev / next nav */}
-                        <div className="flex items-center justify-between px-6 md:px-12 py-10 border-t border-ink/10">
+                        <div className="flex items-center justify-between px-6 md:px-12 py-10 border-t border-appfg/10 dark:border-white/10">
                             <button
                                 onClick={goPrev}
-                                className="inline-flex items-center gap-2 text-ink/50 hover:text-blurple transition-colors font-medium group"
+                                className="inline-flex items-center gap-2 text-appfg/50 hover:text-blurple transition-colors font-medium group"
                             >
                                 <ChevronLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
                                 {CASE_STUDIES[(currentIndex - 1 + CASE_STUDIES.length) % CASE_STUDIES.length].label}
                             </button>
                             <button
                                 onClick={goNext}
-                                className="inline-flex items-center gap-2 text-ink/50 hover:text-blurple transition-colors font-medium group"
+                                className="inline-flex items-center gap-2 text-appfg/50 hover:text-blurple transition-colors font-medium group"
                             >
                                 {CASE_STUDIES[(currentIndex + 1) % CASE_STUDIES.length].label}
                                 <ChevronRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
