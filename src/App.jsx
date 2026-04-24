@@ -10,12 +10,22 @@ import { OverlayProvider } from './contexts/OverlayContext';
 import { CONTENT } from './content';
 import { useGLTF } from '@react-three/drei';
 
-// Preload 3D models globally so they open instantly without a loading flash
-CONTENT.work.projects.forEach(project => {
-  if (project.modelUrl) {
-    useGLTF.preload(`${import.meta.env.BASE_URL}${project.modelUrl}`);
-  }
-});
+// Preload assets for instant case study opening
+const preloadAssets = () => {
+  CONTENT.work.projects.forEach(project => {
+    // 1. Preload 3D Models
+    if (project.modelUrl) {
+      useGLTF.preload(`${import.meta.env.BASE_URL}${project.modelUrl}`);
+    }
+    // 2. Preload Hero Images
+    if (project.image) {
+      const img = new Image();
+      img.src = `${import.meta.env.BASE_URL}${project.image}`;
+    }
+  });
+};
+
+preloadAssets();
 
 function Home() {
   return (

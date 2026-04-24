@@ -1,12 +1,23 @@
-import React, { useEffect, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useCallback, Suspense, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
 import gsap from 'gsap';
 import InvisibleAICaseStudy from '../projects/InvisibleAICaseStudy';
 import VoiceGuidelinesCaseStudy from '../projects/VoiceGuidelinesCaseStudy';
 import MyNMApp from '../projects/MyNMApp';
 import PortfolioAIStudy from '../projects/PortfolioAIStudy';
 import { useOverlayContext } from '../contexts/OverlayContext';
+
+function ProjectLoadingState() {
+    return (
+        <div className="w-full min-h-[60vh] flex flex-col items-center justify-center space-y-4 animate-in fade-in duration-700">
+            <Loader2 className="w-8 h-8 text-indigo-400/40 animate-spin" />
+            <div className="w-48 h-1.5 bg-black/5 rounded-full overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-indigo-400/20 to-transparent translate-x-[-100%] animate-[shimmer_2s_infinite]" />
+            </div>
+        </div>
+    );
+}
 
 const CASE_STUDIES = [
     { slug: 'invisible-ai', label: 'Invisible AI', Component: InvisibleAICaseStudy, bg: 'bg-indigo-50' },
@@ -234,7 +245,11 @@ export default function CaseStudyOverlay({ slug }) {
 
     // ─── Scroll overlay to top when navigating between studies ───────────────
     useEffect(() => {
-        if (scrollRef.current) scrollRef.current.scrollTop = 0;
+        if (window.innerWidth < 768) {
+            window.scrollTo(0, 0);
+        } else if (scrollRef.current) {
+            scrollRef.current.scrollTop = 0;
+        }
     }, [slug]);
 
     // ─── Keyboard navigation ──────────────────────────────────────────────────
@@ -396,7 +411,9 @@ export default function CaseStudyOverlay({ slug }) {
 
                         {/* Case study content */}
                         <div className="clear-right">
-                            <Component />
+                            <Suspense fallback={<ProjectLoadingState />}>
+                                <Component />
+                            </Suspense>
                         </div>
 
                         {/* Bottom prev / next nav */}
