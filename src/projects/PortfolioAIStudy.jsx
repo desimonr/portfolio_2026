@@ -3,12 +3,9 @@ import { CONTENT } from '../content';
 
 export default function PortfolioAIStudy() {
     return (
-        <article className="w-full  pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:md:max-w-5xl md:mx-auto">
+        <article className="w-full pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:max-w-5xl md:mx-auto">
             <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">AI Portfolio Architecture</h1>
-                <p className="text-xl text-ink/70 font-medium max-w-3xl mx-auto text-balance">
-                    Structuring a high-fidelity WebGL React application through LLM-assisted development pipelines.
-                </p>
             </header>
 
             {/* Hero Image */}

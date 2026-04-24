@@ -22,7 +22,7 @@ export const CONTENT = {
     // ──────── HERO SECTION ────────
     hero: {
         greeting: "Hi, I'm Raymond DeSimone,",
-        title: "Senior UX Designer",
+        title: "UX Designer",
         subtitle: "specializing in AI interfaces, healthcare, and manufacturing.",
         // Typing effect text
         telemetryText: "> Conducting usability audits... Mapping conversational architectures... Refining interaction patterns...",

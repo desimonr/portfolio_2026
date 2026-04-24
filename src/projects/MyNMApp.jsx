@@ -4,13 +4,10 @@ import { CONTENT } from '../content';
 
 export default function MyNMApp() {
     return (
-        <article className="w-full  pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:md:max-w-5xl md:mx-auto">
+        <article className="w-full pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:max-w-5xl md:mx-auto">
 
             <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">MyNM App Redesign</h1>
-                <p className="text-xl text-ink/70 font-medium max-w-3xl mx-auto text-balance">
-                    Streamlining healthcare access through intuitive patient-centered design.
-                </p>
             </header>
 
             {/* Hero Image / Header */}
@@ -38,10 +35,13 @@ export default function MyNMApp() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Research</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Combining data from the in-app feedback form with results from a survey of app users, I found that users' biggest pain point was locating important information in a timely manner. Much of this stemmed from confusion over the MyNM app's custom layout and a desire for something closer to the stock MyChart layout that the web version of MyNM uses.
+                            Combining data from the in-app feedback form with results from a survey of app users, I found that users' biggest pain point was locating important information in a timely manner. <strong className="text-blurple">Much of this stemmed from confusion over the MyNM app's custom layout</strong> and a desire for something closer to the stock MyChart layout that the web version of MyNM uses.
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/old-designs.png`} alt="Old Designs with annotations" className="w-full h-auto object-cover" />
+                            <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <p className="text-xs font-mono text-ink/60 uppercase">Users had to navigate through many layers of disparate and sometimes arbitrary menus to find key features</p>
+                            </div>
                         </div>
 
                         <p className="text-ink/80 leading-relaxed mb-6">
@@ -49,16 +49,22 @@ export default function MyNMApp() {
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/competitors.png`} alt="Competitor Analysis" className="w-full h-auto object-cover" />
+                            <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <p className="text-xs font-mono text-ink/60 uppercase">Five of the top competitors.</p>
+                            </div>
                         </div>
                     </section>
 
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">New Design</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            Following the MyNM web layout, I replaced the Home Screen icons with the Health Feed and brought shortcuts to the navigation. Instead of using the hamburger menu, though, I opted to follow industry trends and use a bottom tab bar as the persistent navigation, with "My Tools" representing the searchable menu of all activities.
+                            Following the MyNM web layout, I replaced the Home Screen icons with the Health Feed and brought shortcuts to the navigation. Instead of using the hamburger menu, though, <strong className="text-blurple">I opted to follow industry trends and use a bottom tab bar as the persistent navigation,</strong> with "My Tools" representing the searchable menu of all activities.
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/new-designs.png`} alt="New Designs with annotations" className="w-full h-auto object-cover" />
+                            <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
+                                <p className="text-xs font-mono text-ink/60 uppercase">New design featuring a tab bar and Health Feed.</p>
+                            </div>
                         </div>
                     </section>
 
@@ -107,6 +113,6 @@ export default function MyNMApp() {
                     </div>
                 </aside>
             </div>
-        </article>
+        </article >
     );
 }

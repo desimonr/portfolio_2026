@@ -4,12 +4,9 @@ import { CONTENT } from '../content';
 
 export default function InvisibleAICaseStudy() {
     return (
-        <article className="w-full  pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:md:max-w-5xl md:mx-auto">
+        <article className="w-full pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:max-w-5xl md:mx-auto">
             <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">Invisible AI Video Center</h1>
-                <p className="text-xl text-ink/70 font-medium max-w-3xl mx-auto text-balance">
-                    Optimizing the video review interface for a computer vision platform.
-                </p>
             </header>
 
             {/* Hero Image / Header */}
@@ -68,7 +65,7 @@ export default function InvisibleAICaseStudy() {
                             </div>
                         </div>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            I updated the video player layout to take advantage of the AI groupings by allowing users to easily jump between adjacent cameras. The new layout also offered the ability to compare clips from multiple cameras side-by-side, helping them see how events unfold across the production line. For power users, the inclusion of CTAs for add-on apps like Smart Search and Digital Poka Yoke allowed them to quickly dig deeper into the footage and more comprehensively trace clip and camera relationships.
+                            I updated the video player layout to take advantage of the AI groupings by allowing users to easily jump between adjacent cameras. The new layout also offered the ability to compare clips from multiple cameras side-by-side, <strong className="text-blurple">helping them see how events unfold across the production line.</strong> For power users, the inclusion of CTAs for add-on apps like Smart Search and Digital Poka Yoke allowed them to quickly dig deeper into the footage and more comprehensively trace clip and camera relationships.
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/invisible_ai/new_ui.png`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
