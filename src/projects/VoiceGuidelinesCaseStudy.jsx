@@ -4,7 +4,7 @@ import { CONTENT } from '../content';
 
 export default function VoiceGuidelinesCaseStudy() {
     return (
-        <article className="pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 max-w-5xl mx-auto">
+        <article className="w-full  pt-0 pb-0 md:pt-32 md:pb-20 md:px-12 md:md:max-w-5xl md:mx-auto">
 
             <header className="mb-16 px-6 md:px-0 pt-16 md:pt-0 text-center">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-ink mb-6">Conversational AI Voice Guidelines</h1>

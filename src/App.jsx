@@ -43,14 +43,14 @@ function App() {
     <Router basename={basename}>
       <OverlayProvider>
         <main className="bg-slate min-h-screen font-sans selection:bg-blurple selection:text-white overflow-x-hidden">
-          <Navbar content={CONTENT.navbar} />
-          {/*
-           * <Home> is ALWAYS mounted – never remounts when the overlay opens/closes.
-           * This means scroll position is naturally preserved; no scroll-to-top needed.
-           */}
-          <Home />
+          <div id="main-nav">
+            <Navbar content={CONTENT.navbar} />
+          </div>
+          <div id="homepage-content">
+            <Home />
+            <Footer content={CONTENT.footer} />
+          </div>
           <CaseStudyOverlayManager />
-          <Footer content={CONTENT.footer} />
         </main>
       </OverlayProvider>
     </Router>
