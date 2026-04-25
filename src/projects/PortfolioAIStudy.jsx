@@ -9,7 +9,7 @@ export default function PortfolioAIStudy() {
             </header>
 
             {/* Hero Image */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative">
+            <div className="w-full h-[240px] sm:h-[320px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative">
                 <img src={`${import.meta.env.BASE_URL}img/ai_portfolio/thumb.png`} alt="Portfolio Home Page" className="w-full h-full object-cover object-top" />
             </div>
 
@@ -45,7 +45,7 @@ export default function PortfolioAIStudy() {
                             <div className="bg-slate rounded-2xl border border-white/40 overflow-hidden">
                                 <img src={`${import.meta.env.BASE_URL}img/voice_guidelines_thumb.png`} alt="Voice Guidelines 3D Orb" className="w-full h-auto object-cover" />
                                 <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
-                                    <p className="text-xs font-mono text-ink/60 uppercase">Refining the "vocal orb" visual: Using AI to rapidly prototype custom distortion shaders that respond to user presence.</p>
+                                    <p className="text-xs font-mono text-ink/60 uppercase">Refining the "vocal orb" visual: Using AI to rapidly prototype custom distortion shaders that respond to user presence</p>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@ export default function PortfolioAIStudy() {
                             <div className="rounded-xl overflow-hidden border border-white/40 relative">
                                 <img src={`${import.meta.env.BASE_URL}img/invisible_ai_thumb.png`} alt="Invisible AI Hero" className="w-full h-auto object-cover" />
                                 <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
-                                    <p className="text-xs font-mono text-ink/60 uppercase">Mobile Optimization: Re-configuring 3D viewports to maintain interactive depth on smaller touchscreens while preserving framerate.</p>
+                                    <p className="text-xs font-mono text-ink/60 uppercase">Mobile Optimization: Re-configuring 3D viewports to maintain interactive depth on smaller touchscreens while preserving framerate</p>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +90,8 @@ export default function PortfolioAIStudy() {
                             <h4 className="text-xs font-mono text-blurple uppercase tracking-wider mb-3">Design Partners</h4>
                             <ul className="space-y-2 text-ink/80 font-medium">
                                 <li>Google Antigravity</li>
-                                <li>Claude 3.5 Sonnet</li>
-                                <li>Gemini 1.5 Pro</li>
+                                <li>Claude Sonnet 4.6</li>
+                                <li>Gemini 3.1 Pro</li>
                             </ul>
                         </div>
                         <div>

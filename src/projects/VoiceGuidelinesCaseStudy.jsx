@@ -11,7 +11,7 @@ export default function VoiceGuidelinesCaseStudy() {
             </header>
 
             {/* Hero Image / Header */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
+            <div className="w-full h-[240px] sm:h-[320px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center overflow-hidden">
                     <VoiceOrb3D />

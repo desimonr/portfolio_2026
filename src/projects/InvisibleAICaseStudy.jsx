@@ -10,7 +10,7 @@ export default function InvisibleAICaseStudy() {
             </header>
 
             {/* Hero Image / Header */}
-            <div className="w-full h-[400px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
+            <div className="w-full h-[240px] sm:h-[320px] md:h-[500px] rounded-none md:rounded-3xl bg-slate border-y md:border border-white/40 shadow-sm overflow-hidden mb-16 relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blurple/10 to-transparent z-10 pointer-events-none" />
                 <div className="absolute inset-0 bg-zinc-100 flex items-center justify-center overflow-hidden">
                     <Hero3D
@@ -56,7 +56,7 @@ export default function InvisibleAICaseStudy() {
                     <section className="prose prose-lg prose-slate max-w-none">
                         <h2 className="text-2xl font-bold tracking-tight text-ink mb-4">Key Design Decisions</h2>
                         <p className="text-ink/80 leading-relaxed mb-6">
-                            After several iterations, I landed on a design that introduced line-level filtering as the primary organizational layer, immediately scoping results to specific production areas. To future proof the design, I also included placeholder filters for additional data types that the company planned to integrate in the future.
+                            After several iterations, I landed on a design that <strong className="text-blurple">introduced line-level filtering as the primary organizational layer</strong>, immediately scoping results to specific production areas. To future proof the design, I also included placeholder filters for additional data types that the company planned to integrate in the future.
                         </p>
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/invisible_ai/wireframes.jpg`} alt="Video Center UI with two videos side-by-side and search results below with multiple filters" className="w-full h-auto object-cover" />
