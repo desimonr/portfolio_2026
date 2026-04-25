@@ -64,7 +64,7 @@ export const CONTENT = {
             {
                 id: 4,
                 slug: "ai-portfolio",
-                title: "AI Portfolio Architecture",
+                title: "UX Portfolio Site",
                 desc: "A meta case study on how this premium, scalable React architecture was built efficiently in tandem with AI assistance.",
                 thumb: "img/ai_portfolio/thumb.png",
                 modelUrl: "img/mynm_redesign/new_design/MyNM_phone_mockups.glb",

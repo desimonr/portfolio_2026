@@ -50,7 +50,7 @@ export default function MyNMApp() {
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/competitors.png`} alt="Competitor Analysis" className="w-full h-auto object-cover" />
                             <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
-                                <p className="text-xs font-mono text-ink/60 uppercase">Five of the top competitors.</p>
+                                <p className="text-xs font-mono text-ink/60 uppercase">Five of the top competitors</p>
                             </div>
                         </div>
                     </section>
@@ -63,7 +63,7 @@ export default function MyNMApp() {
                         <div className="w-full bg-slate rounded-2xl border border-white/40 overflow-hidden mb-6">
                             <img src={`${import.meta.env.BASE_URL}img/mynm_redesign/new-designs.png`} alt="New Designs with annotations" className="w-full h-auto object-cover" />
                             <div className="p-4 bg-white/50 backdrop-blur-md border-t border-white/20">
-                                <p className="text-xs font-mono text-ink/60 uppercase">New design featuring a tab bar and Health Feed.</p>
+                                <p className="text-xs font-mono text-ink/60 uppercase">New design featuring a tab bar and Health Feed</p>
                             </div>
                         </div>
                     </section>
