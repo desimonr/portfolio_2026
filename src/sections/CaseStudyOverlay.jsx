@@ -235,7 +235,13 @@ export default function CaseStudyOverlay({ slug }) {
             document.body.style.width = '';
             document.body.style.backgroundColor = originalBodyBg;
             if (originalThemeMeta) metaTag.setAttribute('content', originalThemeMeta);
+            
+            // CRITICAL: Disable smooth scroll globally for the jump
+            document.documentElement.style.scrollBehavior = 'auto';
             window.scrollTo(0, scrollPos);
+            requestAnimationFrame(() => {
+                document.documentElement.style.scrollBehavior = '';
+            });
 
             if (triggerRef?.current) {
                 triggerRef.current.focus();
@@ -354,23 +360,23 @@ export default function CaseStudyOverlay({ slug }) {
                     </button>
                 </div>
 
-                {/* Horizontal slide container for neighbors */}
-                <div className="absolute inset-0 flex items-stretch overflow-hidden pointer-events-none md:pointer-events-auto">
+                {/* Horizontal slide container for neighbors (Mobile swipe only) */}
+                <div className="md:hidden absolute inset-0 flex items-stretch overflow-hidden pointer-events-none">
                     {/* Neighbor Left */}
                     <div 
-                        className="neighbor-panel left-panel flex-1 md:max-w-6xl w-full h-full translate-x-[-100%] absolute inset-0 bg-slate" 
+                        className="neighbor-panel left-panel flex-1 w-full h-full translate-x-[-100%] absolute inset-0 bg-slate" 
                         style={{ transform: 'translateX(-100%)' }}
                     >
-                        <div className="h-full overflow-hidden opacity-10 pt-16 md:px-12 md:pt-32">
+                        <div className="h-full overflow-hidden opacity-10 pt-16">
                              <PrevComponent />
                         </div>
                     </div>
                     {/* Neighbor Right */}
                     <div 
-                        className="neighbor-panel right-panel flex-1 md:max-w-6xl w-full h-full translate-x-[100%] absolute inset-0 bg-slate"
+                        className="neighbor-panel right-panel flex-1 w-full h-full translate-x-[100%] absolute inset-0 bg-slate"
                         style={{ transform: 'translateX(100%)' }}
                     >
-                        <div className="h-full overflow-hidden opacity-10 pt-16 md:px-12 md:pt-32">
+                        <div className="h-full overflow-hidden opacity-10 pt-16">
                             <NextComponent />
                         </div>
                     </div>
@@ -380,7 +386,7 @@ export default function CaseStudyOverlay({ slug }) {
                 <button
                     onClick={goPrev}
                     aria-label="Previous case study"
-                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group focus-visible:outline-none"
+                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group focus-visible:outline-none pointer-events-auto"
                 >
                     <span className="w-10 h-10 rounded-full border border-white/20 group-hover:border-white/50 group-hover:bg-white/10 flex items-center justify-center transition-all group-focus-visible:ring-2 group-focus-visible:ring-white">
                         <ChevronLeft size={20} />
@@ -440,7 +446,7 @@ export default function CaseStudyOverlay({ slug }) {
                 <button
                     onClick={goNext}
                     aria-label="Next case study"
-                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group focus-visible:outline-none"
+                    className="hidden md:flex items-center justify-center w-16 shrink-0 text-white/50 hover:text-white transition-colors group focus-visible:outline-none pointer-events-auto"
                 >
                     <span className="w-10 h-10 rounded-full border border-white/20 group-hover:border-white/50 group-hover:bg-white/10 flex items-center justify-center transition-all group-focus-visible:ring-2 group-focus-visible:ring-white">
                         <ChevronRight size={20} />
